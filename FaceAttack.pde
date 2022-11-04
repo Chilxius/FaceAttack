@@ -34,7 +34,7 @@ boolean redUp,blueUp;
 
 //For the enemy faces, which will grow more numerous as the game goes on
 int faceCount = 100;
-int activeFaces = 1;
+int activeFaces = 31;
 int activeShot = 0;
 Face faces[] = new Face[faceCount];
 int enemyShotCounter = 0;
@@ -82,6 +82,9 @@ int treasureCount = maxTreasures;
 color [] treasCol = new color[treasureCount];
 float boomCount[] = new float [maxTreasures];
 PImage cookie;
+
+//Variables for student images
+int ballColor = 0;
 
 void setup()
 {
@@ -516,6 +519,22 @@ void detectMissileHits()
       {
         faces[i].destroyed=true;
         missiles[j].active=false;
+        score += 10;
+        doggo.bossCounter -=10;
+        if(!power.active)
+          powerupChance--;
+        if(powerupChance<=0)
+        {
+          powerupChance=int(random(10,15+activeFaces));
+          int choice = int(random(3));
+          if(choice==2)
+            power = new MissilePowerup(faces[j].X,faces[j].Y,3);
+          else if(choice==1)
+            power = new ShotPowerup(faces[j].X,faces[j].Y,3);
+          else
+            power = new BeamPowerup(faces[j].X,faces[j].Y,3);
+          power.activate();
+        }
       }
     }
   }

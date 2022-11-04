@@ -2,7 +2,7 @@
 //by my students and me.
 
 //Edit the drawFace() method to add new faces.
-//If they were using mouseX and mouseY, change it to X and Y (find and replace)
+//If they were using X and Y, change it to X and Y (find and replace)
 //Edit the changeFace() method based on the faces available.
 
 class Face
@@ -18,7 +18,7 @@ class Face
   {
     X = x;
     Y = y;
-    speed = random(.5,2+activeFaces/10);
+    speed = random(.5,2+activeFaces/10.0);
     destroyed = false;
     shot = new EnemyShot(X,Y,speed+(5-speed));
     goingRight = true;
@@ -69,7 +69,7 @@ class Face
   
   public int changeFace()
   {
-    return int(random(29)); //Change this number based on how many faces there are
+    return int(random(36)); //Change this number based on how many faces there are
   }
   
   public void drawExplosion()
@@ -201,7 +201,35 @@ class Face
     }
     else if(faceChoice == 28) //Dutchess
     {
-      noStroke();fill(0, 200, 0);rect(X-100+0, Y-50+0, 200, 100);fill(255);circle(X-100+40, Y-50+30, 40);circle(X-100+100, Y-50+30, 40);circle(X-100+160, Y-50+30, 40);fill(255, 150, 240);rotation = atan2( mouseY-(Y-20), mouseX-(X-60) );translate(X-100+40, Y-50+30);rotate( rotation ); circle(10.5,0,20);rotate( -rotation);translate(-(X-100+40), -(Y-50+30));rotation = atan2( mouseY-(Y-30), mouseX-X );translate(X-100+100, Y-50+30);rotate( rotation ); circle(10.5,0,20);rotate( -rotation);translate(-(X-100+100), -(Y-50+30));rotation = atan2( mouseY-(Y-10), mouseX-(X+60) );translate(X-100+160, Y-50+30);rotate( rotation ); circle(10.5,0,20);rotate( -rotation);translate(-(X-100+160), -(Y-50+30));fill(200, 0, 0);rect(X-100+50, Y-50+60, 100, 30);fill(0);rect(X-100+60, Y-50+70, 80, 10);fill(255);triangle(X-100+50, Y-50+60, X-100+60, Y-50+60, X-100+55, Y-50+70);triangle(X-100+70, Y-50+60, X-100+80, Y-50+60, X-100+75, Y-50+70);triangle(X-100+90, Y-50+60, X-100+100, Y-50+60, X-100+95, Y-50+70);triangle(X-100+110, Y-50+60, X-100+120, Y-50+60, X-100+115, Y-50+70);triangle(X-100+130, Y-50+60, X-100+140, Y-50+60, X-100+135, Y-50+70);triangle(X-100+60, Y-50+90, X-100+70, Y-50+90, X-100+65, Y-50+80);triangle(X-100+80, Y-50+90, X-100+90, Y-50+90, X-100+85, Y-50+80);triangle(X-100+100, Y-50+90, X-100+110, Y-50+90, X-100+105, Y-50+80);triangle(X-100+120, Y-50+90, X-100+130, Y-50+90, X-100+125, Y-50+80);triangle(X-100+140, Y-50+90, X-100+150, Y-50+90, X-100+145, Y-50+80);triangle(X-100+50, Y-50+75, X-100+50, Y-50+85, X-100+60, Y-50+80);triangle(X-100+150, Y-50+65, X-100+150, Y-50+75, X-100+140, Y-50+70);
+      noStroke();fill(0, 200, 0);rect(X-100+0, Y-50+0, 200, 100);fill(255);circle(X-100+40, Y-50+30, 40);circle(X-100+100, Y-50+30, 40);circle(X-100+160, Y-50+30, 40);fill(255, 150, 240);rotation = atan2( Y-(Y-20), X-(X-60) );translate(X-100+40, Y-50+30);rotate( rotation ); circle(10.5,0,20);rotate( -rotation);translate(-(X-100+40), -(Y-50+30));rotation = atan2( Y-(Y-30), X-X );translate(X-100+100, Y-50+30);rotate( rotation ); circle(10.5,0,20);rotate( -rotation);translate(-(X-100+100), -(Y-50+30));rotation = atan2( Y-(Y-10), X-(X+60) );translate(X-100+160, Y-50+30);rotate( rotation ); circle(10.5,0,20);rotate( -rotation);translate(-(X-100+160), -(Y-50+30));fill(200, 0, 0);rect(X-100+50, Y-50+60, 100, 30);fill(0);rect(X-100+60, Y-50+70, 80, 10);fill(255);triangle(X-100+50, Y-50+60, X-100+60, Y-50+60, X-100+55, Y-50+70);triangle(X-100+70, Y-50+60, X-100+80, Y-50+60, X-100+75, Y-50+70);triangle(X-100+90, Y-50+60, X-100+100, Y-50+60, X-100+95, Y-50+70);triangle(X-100+110, Y-50+60, X-100+120, Y-50+60, X-100+115, Y-50+70);triangle(X-100+130, Y-50+60, X-100+140, Y-50+60, X-100+135, Y-50+70);triangle(X-100+60, Y-50+90, X-100+70, Y-50+90, X-100+65, Y-50+80);triangle(X-100+80, Y-50+90, X-100+90, Y-50+90, X-100+85, Y-50+80);triangle(X-100+100, Y-50+90, X-100+110, Y-50+90, X-100+105, Y-50+80);triangle(X-100+120, Y-50+90, X-100+130, Y-50+90, X-100+125, Y-50+80);triangle(X-100+140, Y-50+90, X-100+150, Y-50+90, X-100+145, Y-50+80);triangle(X-100+50, Y-50+75, X-100+50, Y-50+85, X-100+60, Y-50+80);triangle(X-100+150, Y-50+65, X-100+150, Y-50+75, X-100+140, Y-50+70);
+    }
+    else if(faceChoice == 29) //Josh W
+    {
+      noStroke();fill(150,80,30);rect(X-80,Y-80,160,160);fill(80,20,10);rect(X-40,Y-50,30,50);rect(X-50,Y+20,120,30);rect(X-20,Y+50,10,10);rect(X+30,Y+50,10,10);rect(X+20,Y-40,30,40);rect(X+30,Y-20,30,20);fill(40,10,5);rect(X-40,Y-60,10,20);rect(X-30,Y-60,10,10);rect(X-20,Y-50,10,10);rect(X-50,Y-40,10,30);rect(X-60,Y+20,10,20);rect(X-60,Y+20,40,10);rect(X-50,Y+10,10,20);rect(X-30,Y+10,10,20);rect(X-50,Y+40,10,20);rect(X-0,Y+10,10,20);rect(X-10,Y+20,20,10);rect(X+30,Y+10,10,20);rect(X+20,Y+20,20,10);rect(X+50,Y+10,10,20);rect(X+10,Y-50,10,40);rect(X+10,Y-50,30,10);rect(X+40,Y-40,10,10);rect(X+20,Y-60,10,10);fill(150,80,30);rect(X+60,Y+20,10,10);rect(X-30,Y+40,10,10);rect(X-0,Y+40,10,10);rect(X+40,Y+40,10,10);rect(X-20,Y-10,10,10); fill(190,110,30);rect(X+60,Y-0,10,20);rect(X-70,Y-60,10,90);rect(X-60,Y-80,10,10);rect(X-30,Y-80,20,10);rect(X-40,Y-70,40,10);rect(X+10,Y-80,10,10);rect(X+40,Y-80,20,20);rect(X+60,Y-50,10,30);rect(X-70,Y+60,10,10);rect(X-60,Y+60,20,20);rect(X-20,Y+70,10,10);rect(X+10,Y+70,10,10);rect(X+40,Y+70,20,10);rect(X-10,Y+0,10,10);fill(210,130,30);rect(X-60,Y-70,10,30);rect(X-30,Y-70,20,10);rect(X-20,Y-60,20,10);rect(X+10,Y-70,20,10);rect(X+50,Y-70,20,20);rect(X+40,Y-60,10,10);rect(X+50,Y-50,10,10);rect(X+50,Y+60,20,10);rect(X+10,Y+50,20,20);rect(X-30,Y+50,10,20);rect(X-30,Y+60,20,10);rect(X-60,Y+60,10,10);rect(X-70,Y-10,20,20);rect(X-50,Y-0,10,10); fill(220,150,40);rect(X-70,Y-70,10,10);rect(X-70,Y-30,10,20);rect(X-10,Y-50,10,10);rect(X+10,Y-60,10,10);rect(X+10,Y+60,10,10);rect(X+50,Y+50,10,10);
+    }
+    else if(faceChoice == 30) //Riley G
+    {
+      noStroke();fill(0,250,25);ellipse(X+0,Y-75,100,110);noStroke();fill(255,0,0);ellipse(X+0,Y-80,50,35);noStroke();fill(0);ellipse(X+0,Y-80,20,10);stroke(0);strokeWeight(1.5);line(X-30,Y-55,X+30,Y-55);noStroke();fill(0,250,25);rect(X-40,Y-25,80,120,5);noStroke();fill(0,250,25);ellipse(X-55,Y-1,35,20);ellipse(X+55,Y-1,35,20);noStroke();fill(0,250,25);ellipse(X-45,Y+104,50,20);ellipse(X+45,Y+104,50,20);
+    }
+    else if(faceChoice == 31) //J Lew
+    {
+      fill(#271702);rect(X-5,Y-40,10,15);fill(#F2951B);ellipse(X+25,Y-5,20,35);ellipse(X-25,Y-5,20,35);ellipse(X+15,Y-5,25,45);ellipse(X-15,Y-5,25,45);ellipse(X,Y-5,30,55);
+    }
+    else if(faceChoice == 32) //Jamie S
+    {
+      stroke(0);fill(255);circle(X+0,Y+0,100);if(mousePressed)ballColor = int(random(10));if(ballColor == 0)fill(0,0,255);if(ballColor == 1)fill(255,0,0);if(ballColor == 2)fill(#6D33CB);if(ballColor == 3)fill(255);if(ballColor == 4)fill(0);if(ballColor == 5)fill(#0A8B2D);if(ballColor == 6)fill(#F4F516);if(ballColor == 7)fill(#16D5F5);if(ballColor == 8)fill(#D616F5);if(ballColor == 9)fill(#D66C02);if(ballColor == 10)fill(#8B0D7F);arc(X+0,Y+0,100,100,PI,TWO_PI);fill(0);strokeCap(SQUARE);strokeWeight(10);line(X-50,Y-0,X+50,Y+0);strokeWeight(2);circle(X+0,Y+0,30);fill(255);circle(X+0,Y+0,20);circle(X+0,Y+0,10);noStroke();fill(255,255,255,100);ellipse(X+0,Y-30,50,10);
+    }
+    else if(faceChoice == 33) //Shayne C
+    {
+      fill(150);rect(X-100+50, Y-100+60, 130, 100);rect(X-100+60, Y-100+160, 100, 10);rect(X-100+60, Y-100+180, 20, 10);rect(X-100+110, Y-100+180, 20, 10);fill(#FF4882);square(X-100+50,Y-100+140, 20);square(X-100+160, Y-100+130, 20);fill(#0052FF);rect(X-100+50, Y-100+30, 40, 50);rect(X-100+30, Y-100+40, 20, 40);rect(X-100+90, Y-100+40, 40, 40);rect(X-100+60, Y-100+80, 30, 10);square(X-100+90, Y-100+10, 10);rect(X-100+120, Y-100+20, 60, 40);fill(#2100FF);square(X-100+40, Y-100+80, 20);rect(X-100+50, Y-100+90, 80, 20);rect(X-100+90, Y-100+80, 50, 10);square(X-100+120, Y-100+70, 10);square(X-100+130, Y-100+60, 20);rect(X-100+120, Y-100+50, 20, 10);square(X-100+120, Y-100+40, 10);square(X-100+110, Y-100+30, 10);square(X-100+90, Y-100+20, 10);square(X-100+150, Y-100+50, 10);rect(X-100+160, Y-100+40, 30, 10);rect(X-100+180, Y-100+30, 10, 30);square(X-100+170, Y-100+20, 10);rect(X-100+30, Y-100+70, 10, 20);fill(60);rect(X-100+50, Y-100+170, 120, 10);rect(X-100+40, Y-100+110, 70, 10);rect(X-100+70, Y-100+120, 20, 10);rect(X-100+40, Y-100+100, 10, 60);rect(X-100+50, Y-100+160, 10, 30);rect(X-100+60, Y-100+190, 30, 10);rect(X-100+110, Y-100+190, 30, 10);rect(X-100+80, Y-100+180, 10, 10);rect(X-100+130, Y-100+180, 10, 20);rect(X-100+100, Y-100+180, 10, 10);rect(X-100+160, Y-100+160, 10, 10);rect(X-100+170, Y-100+150, 10, 10);rect(X-100+180, Y-100+100, 10, 50);rect(X-100+170, Y-100+50, 10, 50);rect(X-100+180, Y-100+60, 10, 10);rect(X-100+190, Y-100+30, 10, 30);rect(X-100+180, Y-100+20, 10, 10);rect(X-100+130, Y-100+10, 50, 10);rect(X-100+100,Y-100+ 20, 30, 10);rect(X-100+100, Y-100+10, 10, 30);rect(X-100+90,Y-100+ 0, 10, 10);rect(X-100+80, Y-100+10, 10, 20);rect(X-100+90, Y-100+30, 10, 10);rect(X-100+50, Y-100+20, 30, 10);rect(X-100+40, Y-100+30, 10, 10);rect(X-100+30, Y-100+40, 10, 20);rect(X-100+20, Y-100+60, 10, 30);rect(X-100+30, Y-100+90, 10, 10);rect(X-100+110, Y-100+100, 20, 10);rect(X-100+130, Y-100+90, 10, 10);rect(X-100+140, Y-100+80, 10, 10);rect(X-100+150, Y-100+60, 10, 20);rect(X-100+160, Y-100+50, 10, 10);rect(X-100+110, Y-100+40, 10, 10);rect(X-100+120, Y-100+120, 10, 10);rect(X-100+140, Y-100+110, 20, 20);fill(255);rect(X-100+140, Y-100+110, 10, 10);fill(60);rect(X-100+80, Y-100+140, 10, 10);rect(X-100+110, Y-100+140, 10, 10);rect(X-100+140, Y-100+140, 10, 10);rect(X-100+80, Y-100+150, 70, 10);
+    }
+    else if(faceChoice == 34) //Zach M
+    {
+      garchomp(X,Y);
+    }
+    else if(faceChoice == 35) //Peyton H
+    {
+      fill(242,202,125);circle(X,Y,100);circle(X-20,Y+10,27);circle(X+20,Y+10,27);fill(255);circle(X-20,Y+5,30);circle(X+20,Y+5,30);fill(0);circle(X-20,Y+5,15);circle(X+20,Y+5,15);fill(255,70,70);arc(X,Y,100,100,PI,PI*2);rect(X-60,Y-15,120,20);fill(0);arc(X+9,Y+40,20,20,PI,PI*2);
     }
   }
 }
