@@ -34,7 +34,7 @@ boolean redUp,blueUp;
 
 //For the enemy faces, which will grow more numerous as the game goes on
 int faceCount = 100;
-int activeFaces = 31;
+int activeFaces = 1;
 int activeShot = 0;
 Face faces[] = new Face[faceCount];
 int enemyShotCounter = 0;
