@@ -69,7 +69,7 @@ class Face
   
   public int changeFace()
   {
-    return int(random(36)); //Change this number based on how many faces there are
+    return int(random(41)); //Change this number based on how many faces there are
   }
   
   public void drawExplosion()
@@ -230,6 +230,26 @@ class Face
     else if(faceChoice == 35) //Peyton H
     {
       fill(242,202,125);circle(X,Y,100);circle(X-20,Y+10,27);circle(X+20,Y+10,27);fill(255);circle(X-20,Y+5,30);circle(X+20,Y+5,30);fill(0);circle(X-20,Y+5,15);circle(X+20,Y+5,15);fill(255,70,70);arc(X,Y,100,100,PI,PI*2);rect(X-60,Y-15,120,20);fill(0);arc(X+9,Y+40,20,20,PI,PI*2);
+    }
+    else if(faceChoice == 36) //Maalika S
+    {
+      stroke(0);fill(#FAFF08);circle(X,Y,150);line(X-20,Y+30, X+50,Y+30);line(X-60,Y-20, X-10,Y-20);line(X+20,Y-20, X+70,Y-20);fill(#F22727);noStroke();rect(X+10,Y+30, 20,10);arc(X+20, Y+40, 20,20,0,PI);stroke(0);line(X+20,Y+30, X+20,Y+45);
+    }
+    else if(faceChoice == 37) //Sage S
+    {
+      fill(255,60,0);beginShape();vertex(X-250+143,Y-250+253);vertex(X-250+206,Y-250+274);vertex(X-250+188,Y-250+322);vertex(X-250+225,Y-250+294);vertex(X-250+249,Y-250+350);vertex(X-250+269,Y-250+295);vertex(X-250+317,Y-250+303);vertex(X-250+298,Y-250+270);vertex(X-250+348,Y-250+247);vertex(X-250+295,Y-250+232);vertex(X-250+313,Y-250+193);vertex(X-250+280,Y-250+209);vertex(X-250+255,Y-250+157);vertex(X-250+233,Y-250+207);vertex(X-250+188,Y-250+197);vertex(X-250+201,Y-250+232);vertex(X-250+143,Y-250+253);endShape();fill(255,200,0);ellipse(X-250+250,Y-250+250,100,100);
+    }
+    else if(faceChoice == 38) //Ryan A
+    {
+      fill(0,200,0);square(X-25,Y-25,50);fill(#FFC0CB);rect(X-15,Y+5,30,10);fill(0);square(X-15,Y-15,10);square(X+5,Y-15,10);fill(0,0,200);rect(X-15,Y-55,30,20);rect(X-25,Y-35,50,10);
+    }
+    else if(faceChoice == 39) //Matthew B
+    {
+      stroke(0);fill(#FFF752);quad(X-50+0, Y-50+35, X-50+-5, Y-50+120, X-50+105, Y-50+120, X-50+100, Y-50+35);fill(#FADABB);ellipse(X-50+50, Y-50+60, 80, 80);fill(#FFF752);triangle(X-50+20, Y-50+50, X-50+70, Y-50+10, X-50+10, Y-50+12);fill(#FFF752);beginShape();vertex(X-50+30, Y-50+20);vertex(X-50+20, Y-50+100);vertex(X-50+0, Y-50+40);bezierVertex(X-50+0, Y-50+-20, X-50+100, Y-50+-20, X-50+100, Y-50+40);vertex(X-50+80, Y-50+100);vertex(X-50+70, Y-50+20);endShape();fill(#FFF752);beginShape();vertex(X-50+40, Y-50+20);bezierVertex(X-50+30, Y-50+30, X-50+45, Y-50+70, X-50+100, Y-50+40);bezierVertex(X-50+100, Y-50+40, X-50+70, Y-50+35, X-50+70, Y-50+20);endShape();stroke(0);line(X-50+60, Y-50+60, X-50+80, Y-50+60);line(X-50+80, Y-50+60, X-50+80, Y-50+70);fill(#C1BF0C);circle(X-50+65, Y-50+65, 10);stroke(0);strokeWeight(1);line(X-50+40, Y-50+60, X-50+20, Y-50+60);line(X-50+20, Y-50+60, X-50+20, Y-50+70);fill(#C1BF0C);circle(X-50+30, Y-50+65, 10);fill(0);triangle(X-50+50, Y-50+65, X-50+55, Y-50+70, X-50+50, Y-50+75);line(X-50+40, Y-50+85, X-50+60, Y-50+85);line(X-50+40, Y-50+55, X-50+20, Y-50+55);line(X-50+60, Y-50+55, X-50+80, Y-50+55);fill(255);triangle(X-50+50, Y-50+5, X-50+55, Y-50+15, X-50+45, Y-50+15);fill(0);fill(0, 255, 0);quad(X-50+50, Y-50+10, X-50+55, Y-50+20, X-50+50, Y-50+30, X-50+45, Y-50+20);line(X-50+40, Y-50+10, X-50+55, Y-50+40);line(X-50+60, Y-50+10, X-50+45, Y-50+40);
+    }
+    else if(faceChoice == 40) //Xaine C
+    {
+      fill(#F58207);rect(X-70,Y-80,140,140);fill(#CBAC8A);rect(X-60,Y-50,30,30);fill(#CBAC8A);rect(X+30,Y-50,30,30);fill(#CBAC8A);triangle(X+0,Y-20, X-10,Y+0, X+10,Y+0);fill(#CBAC8A);rect(X-40,Y+20,80,30);fill(255);triangle(X-40,Y+20, X-10,Y+20, X-25,Y+40);fill(255);triangle(X+10,Y+20, X+40,Y+20, X+25,Y+40);
     }
   }
 }
