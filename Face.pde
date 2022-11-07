@@ -69,7 +69,7 @@ class Face
   
   public int changeFace()
   {
-    return int(random(41)); //Change this number based on how many faces there are
+    return int(random(43)); //Change this number based on how many faces there are
   }
   
   public void drawExplosion()
@@ -250,6 +250,14 @@ class Face
     else if(faceChoice == 40) //Xaine C
     {
       fill(#F58207);rect(X-70,Y-80,140,140);fill(#CBAC8A);rect(X-60,Y-50,30,30);fill(#CBAC8A);rect(X+30,Y-50,30,30);fill(#CBAC8A);triangle(X+0,Y-20, X-10,Y+0, X+10,Y+0);fill(#CBAC8A);rect(X-40,Y+20,80,30);fill(255);triangle(X-40,Y+20, X-10,Y+20, X-25,Y+40);fill(255);triangle(X+10,Y+20, X+40,Y+20, X+25,Y+40);
+    }
+    else if(faceChoice == 41) //Laila H
+    {
+      stroke(0);fill(#add8e6);push();translate(X-100+85, Y-200+55);rotate(-.7);rect(0, 0, 20, 30, 100);pop();push();rectMode(CENTER);translate(X+20, Y-200+65);rotate(-2.5);rect(0, 0, 20, 30, 100);pop();fill(#add8e6);circle(X+0,Y-80,100);circle(X+0,Y+0,100);circle(X+0,Y+80,100);fill(255);arc(X-100+80,Y-200+100,25,30, PI, TWO_PI);arc(X-100+80,Y-200+100,25,10, 0, PI);arc(X-100+120,Y-200+100,25,30, PI, TWO_PI);arc(X-100+120,Y-200+100,25,10, 0, PI);arc(X-100+80,Y-200+180,25,30, PI, TWO_PI);arc(X-100+80,Y-200+180,25,10,0,PI);arc(X-100+120,Y-200+180,25,30,PI,TWO_PI);arc(X-100+120,Y-200+180,25,10,0,PI);arc(X-100+80,Y-200+260,25,30, PI, TWO_PI);arc(X-100+80,Y-200+260,25,10,0,PI);arc(X-100+120,Y-200+260,25,30,PI,TWO_PI);arc(X-100+120,Y-200+260,25,10,0,PI);arc(X-100+80,Y-200+105,20,10,PI,TWO_PI);arc(X-100+80,Y-200+105,20,10,0,PI);arc(X-100+120,Y-200+105,20,10,PI,TWO_PI);arc(X-100+120,Y-200+105,20,10,0,PI);arc(X-100+80,Y-200+185,20,10,PI,TWO_PI);arc(X-100+80,Y-200+185,20,10,0,PI);arc(X-100+120,Y-200+185,20,10,PI,TWO_PI);arc(X-100+120,Y-200+185,20,10,0,PI);arc(X-100+80,Y-200+265,20,10,PI,TWO_PI);arc(X-100+80,Y-200+265,20,10,0,PI);arc(X-100+120,Y-200+265,20,10,PI,TWO_PI);arc(X-100+120,Y-200+265,20,10,0,PI);fill(#F5E905);triangle(X-100+90,Y-200+115, X-100+110,Y-200+115, X-100+100,Y-200+125);quad(X-100+100,Y-200+100, X-100+90,Y-200+115, X-100+100,Y-200+120, X-100+110,Y-200+115);triangle(X-100+90,Y-200+195, X-100+110,Y-200+195, X-100+100,Y-200+205);quad(X-100+100,Y-200+180, X-100+90,Y-200+195,X-100+ 100,Y-200+200, X-100+110,Y-200+195);triangle(X-100+90,Y-200+275, X-100+110,Y-200+275, X-100+100,Y-200+285);quad(X-100+100,Y-200+260, X-100+90,Y-200+275, X-100+100,Y-200+280, X-100+110,Y-200+275);fill(0);circle(X-100+85,Y-200+95,5);circle(X-100+125,Y-200+95,5);circle(X-100+85,Y-200+175,5);circle(X-100+125,Y-200+175,5);circle(X-100+85,Y-200+255,5);circle(X-100+125,Y-200+255,5);
+    }
+    else if(faceChoice == 42) //Zach J
+    {
+      fill(246,255,0);fill(246,255,0);ellipse(X-450+450,Y-450+450,200,200);noStroke();fill(255);ellipse(X-450+410,Y-450+420,50,50);ellipse(X-450+490,Y-450+420,50,50);fill(0);rect(X-450+400,Y-450+500,100,20);ellipse(X-450+410,Y-450+420,20,20);ellipse(X-450+490,Y-450+420,20,20);
     }
   }
 }
