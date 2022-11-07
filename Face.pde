@@ -2,7 +2,7 @@
 //by my students and me.
 
 //Edit the drawFace() method to add new faces.
-//If they were using X and Y, change it to X and Y (find and replace)
+//If they were using mouse X and mouse Y, change it to X and Y (find and replace)
 //Edit the changeFace() method based on the faces available.
 
 class Face

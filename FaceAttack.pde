@@ -479,7 +479,8 @@ void drawShip()
 
 void chargeMissiles()
 {
-  missileCountDown-=missileBonus/2.0;
+  if(!gameOver)
+    missileCountDown-=missileBonus/2.0;
   if(missileCountDown<=0)
   {
     if(chargingLeftMissile && !missiles[0].active)

@@ -2,7 +2,6 @@
 //Gen 4 Garchomp Sprite
 //2855 pixels
 
-
 /*
 How to read
 
@@ -22,6 +21,8 @@ void garchomp(float X, float Y) {
   int xPos = int(X);
   int yPos = int(Y);
   boolean isShiny = false;
+  if(mousePressed)
+    isShiny = true;
   
   if(isShiny == false) {
     noStroke();
