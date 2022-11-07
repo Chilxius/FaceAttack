@@ -456,6 +456,10 @@ void drawShotHud()
 
 void drawShip()
 {
+  //Layton L
+  noStroke();fill(180);rect(mouseX-38, height-50+2.5, 5, 40);rect(mouseX-33, height-50+17.5, 5, 15);rect(mouseX-28, height-50+12.5, 5, 15);rect(mouseX-23, height-50-17.5, 5, 40);rect(mouseX-18, height-50+2.5, 5, 30);rect(mouseX-13, height-50-7, 5, 30);rect(mouseX-8, height-50-22.5, 5, 50);rect(mouseX-3, height-50-32.5, 5, 70);rect(mouseX+2, height-50-22.5, 5, 50);rect(mouseX+6.5, height-50-7.5, 5, 30);rect(mouseX+11, height-50+2.5, 5, 30);rect(mouseX+16, height-50-17.5, 5, 40);rect(mouseX+21, height-50+12.5, 5, 15);rect(mouseX+26, height-50+17.5, 5, 15);rect(mouseX+31, height-50+2.5, 5, 40);fill(255, 0, 0);rect(mouseX-38, height-50-7.5, 5, 10);rect(mouseX-23, height-50-17.5, 5, 10);rect(mouseX-8, height-50+2.5, 5, 10);rect(mouseX-13, height-50+17.5, 5, 15);rect(mouseX-18, height-50+22.5, 5, 10);fill(0, 0, 200);square(mouseX-23, height-50+2.5, 5);square(mouseX-18, height-50-2.5, 5);fill(255, 0, 0);rect(mouseX+31, height-50-7.5, 5, 10);rect(mouseX+16, height-50-17.5, 5, 10);rect(mouseX-3, height-50-2.5, 5, 10);rect(mouseX+2, height-50+2.5, 5, 10);rect(mouseX+6, height-50+17.5, 5, 15);rect(mouseX+11, height-50+22.5, 5, 10);fill(0, 0, 200);square(mouseX+16, height-50+2.5, 5);square(mouseX+11, height-50-2.5, 5);
+  
+  /*
   fill(mouseX/4,255-(mouseX-width/2),mouseY/4);
   triangle(mouseX,height-75,mouseX-25,height-25,mouseX+25,height-25);
   if(missileBonus>0)
@@ -465,6 +469,7 @@ void drawShip()
     //circle(mouseX-30-missileBonus/2,height-45,10+missileBonus);
     //circle(mouseX+30+missileBonus/2,height-45,10+missileBonus);
   }
+  */
   
   if(charging)
   {

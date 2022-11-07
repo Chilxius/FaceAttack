@@ -69,7 +69,7 @@ class Face
   
   public int changeFace()
   {
-    return int(random(43)); //Change this number based on how many faces there are
+    return int(random(27,44)); //Change this number based on how many faces there are
   }
   
   public void drawExplosion()
@@ -153,7 +153,7 @@ class Face
     }
     else if(faceChoice == 16) //Josiah B
     {
-      stroke(20);fill(255);ellipse(X+5,Y-20, 20, 20);strokeWeight(3);line(X+5,Y-10,X+5,Y+23);line(X+5,Y+23,X+0,Y+50);line(X+5, Y+23, X+20,Y+50);line(X+4, Y-1,X-10,Y+10);line(X+4, Y-1, X+30, Y+10);
+      stroke(20);fill(255);ellipse(X+5,Y-20, 20, 20);strokeWeight(3);line(X+5,Y-10,X+5,Y+23);line(X+5,Y+23,X+0,Y+50);line(X+5, Y+23, X+20,Y+50);line(X+4, Y-1,X-10,Y+10);line(X+4, Y-1, X+30, Y+10);strokeWeight(1);
     }
     else if(faceChoice == 17) //Kaylei H
     {
@@ -209,7 +209,7 @@ class Face
     }
     else if(faceChoice == 30) //Riley G
     {
-      noStroke();fill(0,250,25);ellipse(X+0,Y-75,100,110);noStroke();fill(255,0,0);ellipse(X+0,Y-80,50,35);noStroke();fill(0);ellipse(X+0,Y-80,20,10);stroke(0);strokeWeight(1.5);line(X-30,Y-55,X+30,Y-55);noStroke();fill(0,250,25);rect(X-40,Y-25,80,120,5);noStroke();fill(0,250,25);ellipse(X-55,Y-1,35,20);ellipse(X+55,Y-1,35,20);noStroke();fill(0,250,25);ellipse(X-45,Y+104,50,20);ellipse(X+45,Y+104,50,20);
+      noStroke();fill(0,250,25);ellipse(X+0,Y-75,100,110);noStroke();fill(255,0,0);ellipse(X+0,Y-80,50,35);noStroke();fill(0);ellipse(X+0,Y-80,20,10);stroke(0);strokeWeight(1.5);line(X-30,Y-55,X+30,Y-55);noStroke();fill(0,250,25);rect(X-40,Y-25,80,120,5);noStroke();fill(0,250,25);ellipse(X-55,Y-1,35,20);ellipse(X+55,Y-1,35,20);noStroke();fill(0,250,25);ellipse(X-45,Y+104,50,20);ellipse(X+45,Y+104,50,20);strokeWeight(1);
     }
     else if(faceChoice == 31) //J Lew
     {
@@ -217,7 +217,7 @@ class Face
     }
     else if(faceChoice == 32) //Jamie S
     {
-      stroke(0);fill(255);circle(X+0,Y+0,100);if(mousePressed)ballColor = int(random(10));if(ballColor == 0)fill(0,0,255);if(ballColor == 1)fill(255,0,0);if(ballColor == 2)fill(#6D33CB);if(ballColor == 3)fill(255);if(ballColor == 4)fill(0);if(ballColor == 5)fill(#0A8B2D);if(ballColor == 6)fill(#F4F516);if(ballColor == 7)fill(#16D5F5);if(ballColor == 8)fill(#D616F5);if(ballColor == 9)fill(#D66C02);if(ballColor == 10)fill(#8B0D7F);arc(X+0,Y+0,100,100,PI,TWO_PI);fill(0);strokeCap(SQUARE);strokeWeight(10);line(X-50,Y-0,X+50,Y+0);strokeWeight(2);circle(X+0,Y+0,30);fill(255);circle(X+0,Y+0,20);circle(X+0,Y+0,10);noStroke();fill(255,255,255,100);ellipse(X+0,Y-30,50,10);
+      stroke(0);fill(255);circle(X+0,Y+0,100);if(mousePressed)ballColor = int(random(10));if(ballColor == 0)fill(0,0,255);if(ballColor == 1)fill(255,0,0);if(ballColor == 2)fill(#6D33CB);if(ballColor == 3)fill(255);if(ballColor == 4)fill(0);if(ballColor == 5)fill(#0A8B2D);if(ballColor == 6)fill(#F4F516);if(ballColor == 7)fill(#16D5F5);if(ballColor == 8)fill(#D616F5);if(ballColor == 9)fill(#D66C02);if(ballColor == 10)fill(#8B0D7F);arc(X+0,Y+0,100,100,PI,TWO_PI);fill(0);strokeCap(SQUARE);strokeWeight(10);line(X-50,Y-0,X+50,Y+0);strokeWeight(2);circle(X+0,Y+0,30);fill(255);circle(X+0,Y+0,20);circle(X+0,Y+0,10);noStroke();fill(255,255,255,100);ellipse(X+0,Y-30,50,10);strokeWeight(1);
     }
     else if(faceChoice == 33) //Shayne C
     {
@@ -253,11 +253,15 @@ class Face
     }
     else if(faceChoice == 41) //Laila H
     {
-      stroke(0);fill(#add8e6);push();translate(X-100+85, Y-200+55);rotate(-.7);rect(0, 0, 20, 30, 100);pop();push();rectMode(CENTER);translate(X+20, Y-200+65);rotate(-2.5);rect(0, 0, 20, 30, 100);pop();fill(#add8e6);circle(X+0,Y-80,100);circle(X+0,Y+0,100);circle(X+0,Y+80,100);fill(255);arc(X-100+80,Y-200+100,25,30, PI, TWO_PI);arc(X-100+80,Y-200+100,25,10, 0, PI);arc(X-100+120,Y-200+100,25,30, PI, TWO_PI);arc(X-100+120,Y-200+100,25,10, 0, PI);arc(X-100+80,Y-200+180,25,30, PI, TWO_PI);arc(X-100+80,Y-200+180,25,10,0,PI);arc(X-100+120,Y-200+180,25,30,PI,TWO_PI);arc(X-100+120,Y-200+180,25,10,0,PI);arc(X-100+80,Y-200+260,25,30, PI, TWO_PI);arc(X-100+80,Y-200+260,25,10,0,PI);arc(X-100+120,Y-200+260,25,30,PI,TWO_PI);arc(X-100+120,Y-200+260,25,10,0,PI);arc(X-100+80,Y-200+105,20,10,PI,TWO_PI);arc(X-100+80,Y-200+105,20,10,0,PI);arc(X-100+120,Y-200+105,20,10,PI,TWO_PI);arc(X-100+120,Y-200+105,20,10,0,PI);arc(X-100+80,Y-200+185,20,10,PI,TWO_PI);arc(X-100+80,Y-200+185,20,10,0,PI);arc(X-100+120,Y-200+185,20,10,PI,TWO_PI);arc(X-100+120,Y-200+185,20,10,0,PI);arc(X-100+80,Y-200+265,20,10,PI,TWO_PI);arc(X-100+80,Y-200+265,20,10,0,PI);arc(X-100+120,Y-200+265,20,10,PI,TWO_PI);arc(X-100+120,Y-200+265,20,10,0,PI);fill(#F5E905);triangle(X-100+90,Y-200+115, X-100+110,Y-200+115, X-100+100,Y-200+125);quad(X-100+100,Y-200+100, X-100+90,Y-200+115, X-100+100,Y-200+120, X-100+110,Y-200+115);triangle(X-100+90,Y-200+195, X-100+110,Y-200+195, X-100+100,Y-200+205);quad(X-100+100,Y-200+180, X-100+90,Y-200+195,X-100+ 100,Y-200+200, X-100+110,Y-200+195);triangle(X-100+90,Y-200+275, X-100+110,Y-200+275, X-100+100,Y-200+285);quad(X-100+100,Y-200+260, X-100+90,Y-200+275, X-100+100,Y-200+280, X-100+110,Y-200+275);fill(0);circle(X-100+85,Y-200+95,5);circle(X-100+125,Y-200+95,5);circle(X-100+85,Y-200+175,5);circle(X-100+125,Y-200+175,5);circle(X-100+85,Y-200+255,5);circle(X-100+125,Y-200+255,5);
+      strokeWeight(1);stroke(0);fill(#add8e6);push();translate(X-100+85, Y-200+55);rotate(-.7);rect(0, 0, 20, 30, 100);pop();push();rectMode(CENTER);translate(X+20, Y-200+65);rotate(-2.5);rect(0, 0, 20, 30, 100);pop();fill(#add8e6);circle(X+0,Y-80,100);circle(X+0,Y+0,100);circle(X+0,Y+80,100);fill(255);arc(X-100+80,Y-200+100,25,30, PI, TWO_PI);arc(X-100+80,Y-200+100,25,10, 0, PI);arc(X-100+120,Y-200+100,25,30, PI, TWO_PI);arc(X-100+120,Y-200+100,25,10, 0, PI);arc(X-100+80,Y-200+180,25,30, PI, TWO_PI);arc(X-100+80,Y-200+180,25,10,0,PI);arc(X-100+120,Y-200+180,25,30,PI,TWO_PI);arc(X-100+120,Y-200+180,25,10,0,PI);arc(X-100+80,Y-200+260,25,30, PI, TWO_PI);arc(X-100+80,Y-200+260,25,10,0,PI);arc(X-100+120,Y-200+260,25,30,PI,TWO_PI);arc(X-100+120,Y-200+260,25,10,0,PI);arc(X-100+80,Y-200+105,20,10,PI,TWO_PI);arc(X-100+80,Y-200+105,20,10,0,PI);arc(X-100+120,Y-200+105,20,10,PI,TWO_PI);arc(X-100+120,Y-200+105,20,10,0,PI);arc(X-100+80,Y-200+185,20,10,PI,TWO_PI);arc(X-100+80,Y-200+185,20,10,0,PI);arc(X-100+120,Y-200+185,20,10,PI,TWO_PI);arc(X-100+120,Y-200+185,20,10,0,PI);arc(X-100+80,Y-200+265,20,10,PI,TWO_PI);arc(X-100+80,Y-200+265,20,10,0,PI);arc(X-100+120,Y-200+265,20,10,PI,TWO_PI);arc(X-100+120,Y-200+265,20,10,0,PI);fill(#F5E905);triangle(X-100+90,Y-200+115, X-100+110,Y-200+115, X-100+100,Y-200+125);quad(X-100+100,Y-200+100, X-100+90,Y-200+115, X-100+100,Y-200+120, X-100+110,Y-200+115);triangle(X-100+90,Y-200+195, X-100+110,Y-200+195, X-100+100,Y-200+205);quad(X-100+100,Y-200+180, X-100+90,Y-200+195,X-100+ 100,Y-200+200, X-100+110,Y-200+195);triangle(X-100+90,Y-200+275, X-100+110,Y-200+275, X-100+100,Y-200+285);quad(X-100+100,Y-200+260, X-100+90,Y-200+275, X-100+100,Y-200+280, X-100+110,Y-200+275);fill(0);circle(X-100+85,Y-200+95,5);circle(X-100+125,Y-200+95,5);circle(X-100+85,Y-200+175,5);circle(X-100+125,Y-200+175,5);circle(X-100+85,Y-200+255,5);circle(X-100+125,Y-200+255,5);
     }
     else if(faceChoice == 42) //Zach J
     {
       fill(246,255,0);fill(246,255,0);ellipse(X-450+450,Y-450+450,200,200);noStroke();fill(255);ellipse(X-450+410,Y-450+420,50,50);ellipse(X-450+490,Y-450+420,50,50);fill(0);rect(X-450+400,Y-450+500,100,20);ellipse(X-450+410,Y-450+420,20,20);ellipse(X-450+490,Y-450+420,20,20);
+    }
+    else if(faceChoice == 43) //Shawn H
+    {
+      fill(0,100,0);stroke(0);square(X-50,Y-50,100);fill(100,0,0);circle(X+20,Y-25,30);circle(X-25,Y-25,30);fill(#080707);ellipse(X-25,Y-25,-12,25);ellipse(X+20,Y-25,-12,25);fill(#484734);rect(X-30,Y+20,60,20);fill(#E8DE0E);rect(X-15,Y+20,10,5);rect(X+5,Y+20,10,5);fill(0,100,0);square(X-65,Y-10,20);square(X+45,Y-10,20);
     }
   }
 }
