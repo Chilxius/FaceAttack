@@ -41,21 +41,19 @@ int enemyShotCounter = 0;
 int randomFace=0;
 float rotation;
 
-//Player's shots
+//Player's main shots
 int shotsAllowed = 100;
 Shot shots[] = new Shot[shotsAllowed];
+float shotChargeCounter = 0;
+float shotRefilBonus = 0;
+int chargedShots=1;
+int maxShots=2;
 
 //Player's missiles
 Missile missiles[];
 boolean chargingLeftMissile = true;
 boolean missilesActive = false;
 float missileBonus = 0, missileCountDown = 500;
-
-//Game data
-int score = 0;
-boolean gameOver = false;
-boolean paused = false;
-boolean charging = false;
 
 //This is for the charge beam. Sorry for the confusing names.
 float chargeRecharge = 100;
@@ -64,11 +62,11 @@ float chargeShotSize = 0;
 float chargeShotX;
 float chargeSpeedBonus = 0;
 
-//This is for the main gun
-float shotChargeCounter = 0;
-float shotRefilBonus = 0;
-int chargedShots=1;
-int maxShots=2;
+//Game data
+int score = 0;
+boolean gameOver = false;
+boolean paused = false;
+boolean charging = false;
 
 //For powerups that faces drop
 int powerupChance;
@@ -435,6 +433,10 @@ void drawShotHud()
   text("SEEKER MISSILE",30,height-110);
   text("BEAM CANNON",30,height-70);
   text("LASER GUN",30,height-30);
+  textSize(12);
+  text(int(missileBonus),15,height-128);
+  text(int(chargeSpeedBonus*100/15),15,height-88);
+  text(int(maxShots),15,height-48);
   stroke(230);
   strokeWeight(2);
   fill(0,0,50);
