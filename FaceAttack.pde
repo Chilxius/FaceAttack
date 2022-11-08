@@ -42,7 +42,8 @@ int randomFace=0;
 float rotation;
 
 //Player's shots
-Shot shots[] = new Shot[50];
+int shotsAllowed = 100;
+Shot shots[] = new Shot[shotsAllowed];
 
 //Player's missiles
 Missile missiles[];
@@ -84,13 +85,14 @@ float boomCount[] = new float [maxTreasures];
 PImage cookie;
 
 //Variables for student images
-int ballColor = 0;
+int ballColor = 0; //For pokeball
+float size = 150; //For ghost nebula thing
 
 void setup()
 {
   size(1100,900); 
   for(int i = 0; i < faceCount; i++)
-    faces[i] = new Face(random(width),-100);
+    faces[i] = new Face(random(width),-150);
   for(int i = 0; i < shots.length; i++)
     shots[i] = new Shot();
   for(int i = 0; i < starCount; i++)
@@ -571,10 +573,29 @@ void mousePressed()
   if(chargedShots>0 && !charging)
   {
     chargedShots--;
-    shots[activeShot].shoot();
-    activeShot++;
-    if(activeShot>=50)
-      activeShot = 0;
+    if(maxShots<10)
+    {
+      shots[activeShot].shoot(mouseX);
+      activeShot++;
+      if(activeShot>=shotsAllowed)
+        activeShot = 0;
+    }
+    else if(maxShots <20)
+    {
+      shots[activeShot].shoot(mouseX-20);
+      activeShot++;if(activeShot>=shotsAllowed)activeShot = 0;
+      shots[activeShot].shoot(mouseX+20);
+      activeShot++;if(activeShot>=shotsAllowed)activeShot = 0;
+    }
+    else
+    {
+      shots[activeShot].shoot(mouseX-20);
+      activeShot++;if(activeShot>=shotsAllowed)activeShot = 0;
+      shots[activeShot].shoot(mouseX);
+      activeShot++;if(activeShot>=shotsAllowed)activeShot = 0;
+      shots[activeShot].shoot(mouseX+20);
+      activeShot++;if(activeShot>=shotsAllowed)activeShot = 0;
+    }
   }
   //faces[0].shoot(); //for testing
   //doggo.health--;

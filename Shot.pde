@@ -28,9 +28,9 @@ class Shot
     }
   }
   
-  void shoot()
+  void shoot( int xPos )
   {
-    X=mouseX;
+    X=xPos;
     Y=height-50;
     active=true;
   }
