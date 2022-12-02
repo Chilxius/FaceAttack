@@ -87,7 +87,8 @@ class Face
   
   public int changeFace()
   {
-    return int(random(62)); //Change this number based on how many faces there are
+    //return 64;
+    return int(random(66)); //Change this number based on how many faces there are
   }
   
   public void drawFace()
@@ -342,6 +343,22 @@ class Face
     else if(faceChoice == 61) //Gaston F
     {
       stroke(0);fill(224,232,28);rect(X-120+10,Y-150+10,220,200);fill(255,255,255);rect(X-120+60,Y-150+50,30,30);rect(X-120+150,Y-150+50,30,30);fill(0,0,200);rect(X-120+70,Y-150+60,10,10);rect(X-120+160,Y-150+60,10,10);fill(230,232,28);rect(X-120+120,Y-150+100,40,10);line(X-120+60,Y-150+170,X-120+190,Y-150+170);fill(255);rect(X-120+100,Y-150+170,20,20);rect(X-120+130,Y-150+170,20,20);fill(255);rect(X-120+10,Y-150+210,220,20);fill(150,75,0);rect(X-120+10,Y-150+230,220,20);fill(0);rect(X-120+20,Y-150+235,50,10);rect(X-120+170,Y-150+235,50,10);fill(250,0,0);rect(X-120+120,Y-150+220,10,30);fill(224,232,28);rect(X-120+90,Y-150+250,10,60);rect(X-120+150,Y-150+250,10,60);fill(0);rect(X-120+60,Y-150+310,40,10);rect(X-120+150,Y-150+310,40,10);fill(167,163,34);ellipse(X-120+30,Y-150+40,10,10);ellipse(X-120+210,Y-150+40,10,10);ellipse(X-120+30,Y-150+170,10,10);ellipse(X-120+30,Y-150+195,20,20);
+    }
+    else if(faceChoice == 62) //Josh W
+    {
+      fill(210,20,20);stroke(210,20,20);strokeWeight(5);ellipse(X,Y-30,100,90);rect(X-50,Y-30,100,80);ellipse(X,Y+30,100,90);line(X, Y, X, Y+80);line(X-8, Y, X-8, Y+78);line(X-16, Y, X-16, Y+78);line(X-32, Y, X-32, Y+69);line(X-4, Y, X-4, Y+83);line(X-6, Y, X-6, Y+76);line(X-19, Y, X-19, Y+79);line(X-25, Y, X-25, Y+75);line(X-28, Y, X-28, Y+78);line(X-36, Y, X-36, Y+78);line(X-49, Y, X-49, Y+63);line(X-24, Y, X-24, Y+67);line(X-26, Y, X-26, Y+66);line(X-39, Y, X-39, Y+69);line(X-44, Y, X-44, Y+65);line(X, Y, X, Y+80);line(X+8, Y, X+8, Y+81);line(X+14, Y, X+14, Y+79);line(X+32, Y, X+32, Y+69);line(X+4, Y, X+4, Y+81);line(X+6, Y, X+6, Y+76);line(X+19, Y, X+19, Y+78);line(X+25, Y, X+25, Y+76);line(X+28, Y, X+28, Y+78);line(X+34, Y, X+34, Y+79);line(X+49, Y, X+49, Y+65);line(X+24, Y, X+24, Y+76);line(X+26, Y, X+26, Y+72);line(X+39, Y, X+39, Y+65);line(X+45, Y, X+45, Y+68);fill(255);strokeWeight(0);ellipse(X-30, Y-70, 20,20);ellipse(X+30, Y-70, 20,20);fill(0);ellipse(X-30, Y-70, 5,5);ellipse(X+30, Y-70, 5,5);
+    }
+    else if(faceChoice == 63) //Jacob W
+    {
+      fill(250,250,250);circle(X+10*scale,Y+70*scale,489*scale);fill(0,0,0);rect(X-200*scale,Y+100*scale,40*scale,40*scale);rect(X-150*scale,Y+150*scale,40*scale,40*scale);rect(X-100*scale,Y+200*scale,40*scale,40*scale);rect(X-30*scale,Y+250*scale,40*scale,40*scale);rect(X+40*scale,Y+200*scale,40*scale,40*scale);rect(X+100*scale,Y+150*scale,40*scale,40*scale);rect(X+150*scale,Y+100*scale,40*scale,40*scale);fill(223,30,20);circle(X-10*scale,Y+100*scale,40*scale);stroke(0);fill(200,79,0);line(X-153*scale,Y-77*scale,X-74*scale,Y+25*scale);line(X-56*scale,Y-67*scale,X-166*scale,Y+12*scale);line(X+43*scale,Y-101*scale,X+103*scale,Y+0*scale);line(X+123*scale,Y-69*scale,X+24*scale,Y-34*scale);fill(121,120,120);rect(X-40*scale,Y-169*scale,61*scale,30*scale);rect(X-30*scale,Y-191*scale,45*scale,30*scale);circle(X-10*scale,Y-250*scale,130*scale);fill(0,0,0);circle(X-10*scale,Y-250*scale,100*scale);
+    }
+    else if(faceChoice == 64) //Kyra 
+    {
+      fill(#FFB486);stroke(#DE976B);rect(X-10,Y+40,20,20,4);fill(#E8A47A);noStroke();rect(X-10,Y+40,20,13,4);fill(#FFB486);stroke(#DE976B);ellipse(X-46,Y+10,32,35);fill(#E8A47A);ellipse(X-46,Y+10,15,15);fill(#FFB486);stroke(#DE976B);ellipse(X+46,Y+10,32,35);fill(#E8A47A);ellipse(X+46,Y+10,15,15);stroke(#DE976B);ellipse(X-0,Y-0,100,95);fill(0);stroke(0);ellipse(X-25,Y-0,30,25);fill(#FFB486);stroke(#FFB486);ellipse(X-25,Y+1.5,35,25);fill(0);stroke(0);ellipse(X+25,Y-0,30,25);fill(#FFB486);stroke(#FFB486);ellipse(X+25,Y+1.5,35,25);fill(0);stroke(0);ellipse(X-25,Y+10,20,15);fill(255);ellipse(X-20,Y+10,9,9);fill(#FFB486);noStroke();rect(X-35,Y-2,25,10);fill(0);stroke(0);ellipse(X+25,Y+10,20,15);fill(255);noStroke();ellipse(X+30,Y+10,8,8);fill(#FFB486);noStroke();rect(X+15,Y-2,25,10);fill(0);rect(X-10,Y+33,20,.50);fill(#E3C755);stroke(#B7A148);triangle(X-55,Y-40, X-0,Y-47, X-30,Y-30);triangle(X+5,Y-25, X-0,Y-50, X-20,Y-0);triangle(X+50,Y-40, X-4,Y-50, X+20, Y-35);triangle(X-20,Y-60, X-0,Y-47, X-40, Y-50);triangle(X+20,Y-60, X-0,Y-47, X-0,Y-60);
+    }
+    else if(faceChoice == 65) //Cora F
+    {
+      stroke(0);fill(254, 213, 93);circle(X+5, Y+5, 190);fill(0);quad(X-95+6, Y-95+73, X-95+193, Y-95+74, X-95+197, Y-95+106, X-95+3, Y-95+105);fill(196, 202, 206);quad(X-95+32, Y-95+73, X-95+47, Y-95+73, X-95+47, Y-95+105, X-95+32, Y-95+105);fill(196, 202, 206);quad(X-95+152, Y-95+73, X-95+166, Y-95+73, X-95+166, Y-95+106, X-95+152, Y-95+106);fill(255);circle(X+5, Y+5, 90);fill(101, 67, 33);circle(X+5, Y+5, 45);fill(0);circle(X+5, Y+5, 22);noFill();curve(X-95+39, Y-95+67, X-95+39, Y-95+147, X-95+155, Y-95+147, X-95+155, Y-95+67);
     }
   }
 }

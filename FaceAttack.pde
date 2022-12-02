@@ -33,7 +33,7 @@ float red,blue;
 boolean redUp,blueUp;
 
 //For the enemy faces, which will grow more numerous as the game goes on
-int faceCount = 100;
+int faceCount = 100; 
 int activeFaces = 1;
 int activeShot = 0;
 Face faces[] = new Face[faceCount];
@@ -85,6 +85,7 @@ PImage cookie;
 //Variables for student images
 int ballColor = 0; //For pokeball
 float size = 150; //For ghost nebula thing
+float scale = 0.3; //For snowman grenade
 
 void setup()
 {
@@ -256,6 +257,7 @@ void draw()
     }
   }
   fill(255);
+  textSize(20);
   text("Score: " + score,30,30);
   
   if(power.active)
