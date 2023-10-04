@@ -13,6 +13,7 @@ class Face
   int boomCounter, faceChoice;
   float width1,height1; //for one of the faces' code
   EnemyShot shot;
+  String creator = "";
   
   public Face( float x, float y )
   {
@@ -87,13 +88,91 @@ class Face
   
   public int changeFace()
   {
-    //return 64;
-    return int(random(66)); //Change this number based on how many faces there are
+    //return 34;
+    int choice = int(random(66));
+    switch(choice)
+    {
+      case 0: creator = "Ja'Shawn Gilbert"; break;
+      case 1: creator = "Erick Ortiz"; break;
+      case 2: creator = "Jalon Shephard"; break;
+      case 3: creator = "Josh Williams"; break;
+      case 4: creator = "Josh Poppy"; break;
+      case 5: creator = "Elisha Dollinger"; break;
+      case 6: creator = "James M"; break;
+      case 7: creator = "Jackson Crowder"; break;
+      case 8: creator = "Dionte Palmer"; break;
+      case 9: creator = "Omar Lee"; break;
+      
+      case 10: creator = "Oliver Hope"; break;
+      case 11: creator = "Charles Brewer"; break;
+      case 12: creator = "Averit Black"; break;
+      case 13: creator = "Ethan Ashley"; break;
+      case 14: creator = "Dea'von M"; break;
+      case 15: creator = "Lean Querdo"; break;
+      case 16: creator = "Josiah Byard"; break;
+      case 17: creator = "Keylei Hicks"; break;
+      case 18: creator = "Zack Johnson"; break;
+      case 19: creator = "Sage Simpson"; break;
+      
+      case 20: creator = "Shayne Adams"; break;
+      case 21: creator = ""; break;
+      case 22: creator = "James Kirk"; break;
+      case 23: creator = "Mr. Ritchie"; break;
+      case 24: creator = "Logan Bevis"; break;
+      case 25: creator = "Zane Tanner"; break;
+      case 26: creator = "Kevin Tovar"; break;
+      case 27: creator = "Avery Hogue"; break;
+      case 28: creator = "Mr. Ritchie"; break;
+      case 29: creator = "Josh Williams"; break;
+      
+      case 30: creator = "Riley Gill"; break;
+      case 31: creator = "Jonathon Lewis"; break;
+      case 32: creator = "Jamie Seigrist"; break;
+      case 33: creator = "Shayne Castleberry"; break;
+      case 34: creator = "Zach Morgan"; break;
+      case 35: creator = "Peyton Harper"; break;
+      case 36: creator = "Maalika Simmons"; break;
+      case 37: creator = "Sage Simpson"; break;
+      case 38: creator = "Ryan Avery"; break;
+      case 39: creator = "Matthew Brown"; break;
+      
+      case 40: creator = "Xaine Cross"; break;
+      case 41: creator = "Laila Howell"; break;
+      case 42: creator = "Zach Johnson"; break;
+      case 43: creator = "Shawn Hensley"; break;
+      case 44: creator = "Spencer Benbrook"; break;
+      case 45: creator = "Josh Williams"; break;
+      case 46: creator = "Emory Reed"; break;
+      case 47: creator = "Landon M"; break;
+      case 48: creator = "Lance Hurst"; break;
+      case 49: creator = "Kasey Fraley"; break;
+      
+      case 50: creator = "Gabby Dixon"; break;
+      case 51: creator = "Katherine Knight"; break;
+      case 52: creator = "Beth Hauk"; break;
+      case 53: creator = "Zach Dugger"; break;
+      case 54: creator = "Devin Rollason"; break;
+      case 55: creator = "Kanon Canamore"; break;
+      case 56: creator = "Cora Giddings"; break;
+      case 57: creator = "Devin Osburn"; break;
+      case 58: creator = "Lily Mann"; break;
+      case 59: creator = "Rylee Osborne"; break;
+ 
+      case 60: creator = "Jade Brown"; break;
+      case 61: creator = "Gaston Fletcher"; break;
+      case 62: creator = "Josh Williams"; break;
+      case 63: creator = "Jacob Whittenburg"; break;
+      case 64: creator = "Kyra Gleason"; break;
+      case 65: creator = "Cora Franks"; break;
+           
+    }
+    return choice; //Change this number based on how many faces there are
   }
   
   public void drawFace()
   {
     noStroke();
+    fill(255);
     if(destroyed)
       drawExplosion();
     else if(faceChoice == 0) //Ja'Shawn G
