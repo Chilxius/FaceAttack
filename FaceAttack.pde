@@ -34,12 +34,14 @@ boolean redUp,blueUp;
 
 //For the enemy faces, which will grow more numerous as the game goes on
 int faceCount = 100; 
-int activeFaces = 1;
+int activeFaces = 21;
 int activeShot = 0;
 Face faces[] = new Face[faceCount];
 int enemyShotCounter = 0;
 int randomFace=0;
 float rotation;
+float faceRed = 255, faceGreen = 255, faceBlue = 255;
+boolean rUp, gUp, bUp;
 
 //Player's main shots
 int shotsAllowed = 100;
@@ -89,7 +91,8 @@ float scale = 0.3; //For snowman grenade
 
 void setup()
 {
-  size(1100,900); 
+  fullScreen();
+  //size(1100,900); 
   for(int i = 0; i < faceCount; i++)
     faces[i] = new Face(random(width),-150);
   for(int i = 0; i < shots.length; i++)
@@ -172,6 +175,7 @@ void draw()
       treasureCount--;
     faces[i].drawFace();
   }
+  textAlign(LEFT);
   
   //Missiles
   for(int i = 0; i < missiles.length; i++)
@@ -366,6 +370,7 @@ void drawTreasures()
 
 void cycleBackground()
 {
+  //Background
   if(redUp)
     red+=0.02;
   else
@@ -383,6 +388,28 @@ void cycleBackground()
     redUp=false;
   if(red<=0)
     redUp=true;
+    
+  //Faces
+  if(rUp)
+    faceRed+=0.5;
+  else
+    faceRed-=0.6;
+  if(gUp)
+    faceGreen+=0.4;
+  else
+    faceGreen-=0.7;
+  if(bUp)
+    faceBlue+=0.8;
+  else
+    faceBlue-=0.3;
+    
+  if( faceRed > 255 )   rUp = false;
+  if( faceGreen > 255 ) gUp = false;
+  if( faceBlue > 255 )  bUp = false;
+  if( faceRed < 0 )   rUp = true;
+  if( faceGreen < 0 ) gUp = true;
+  if( faceBlue < 0 )  bUp = true;
+
 }
 
 void drawStars()

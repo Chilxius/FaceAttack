@@ -15,6 +15,11 @@ class Face
   EnemyShot shot;
   String creator = "";
   
+  //For Maka'lyn's cookie
+  int chipCount;
+  float chipRotation[];
+  float chipDist[];
+  
   public Face( float x, float y )
   {
     X = x;
@@ -27,6 +32,7 @@ class Face
     faceChoice = changeFace();
     width1=175;
     height1=175;
+    
   }
   
   public boolean moveDown()
@@ -89,7 +95,7 @@ class Face
   public int changeFace()
   {
     //return 34;
-    int choice = int(random(66));
+    int choice = int(random(66,92));
     switch(choice)
     {
       case 0: creator = "Ja'Shawn Gilbert"; break;
@@ -164,20 +170,29 @@ class Face
       case 63: creator = "Jacob Whittenburg"; break;
       case 64: creator = "Kyra Gleason"; break;
       case 65: creator = "Cora Franks"; break;
-           
+      case 66: creator = "Jackson Burch"; break;
+      case 67: creator = "David Sherrill"; break;
+      case 68: creator = "Reed Krablin"; break;
+      case 69: creator = "Keshawn Thornton"; break;
     }
+    
+    //For cookie
+    if(faceChoice == 91){chipCount = 50;chipRotation = new float[chipCount];chipDist = new float[chipCount];for ( int i = 0; i < chipCount; i++ ){chipRotation[i] = (TWO_PI/chipCount)*i;chipDist[i] = random(20, 120);}}
+
     return choice; //Change this number based on how many faces there are
   }
   
   public void drawFace()
   {
-    noStroke();
+    //noStroke();
+    stroke(0);
+    strokeWeight(1);
     fill(255);
     if(destroyed)
       drawExplosion();
     else if(faceChoice == 0) //Ja'Shawn G
     {
-      fill(#FFA600);rect(X-50,Y-80,20,40);rect(X+30,Y-80,20,40);fill(#FF0516);ellipse(X-0,Y-10,160,160);fill(#F7E00C);rect(X-30,Y+10,60,20);fill(#FFF700);rect(X-50,Y-40,40,20);rect(X+10,Y-40,40,20);fill(#FF0015);triangle(X-0,Y+0,X-10,Y+10,X-10,Y+10);
+      noStroke();fill(#FFA600);rect(X-50,Y-80,20,40);rect(X+30,Y-80,20,40);fill(#FF0516);ellipse(X-0,Y-10,160,160);fill(#F7E00C);rect(X-30,Y+10,60,20);fill(#FFF700);rect(X-50,Y-40,40,20);rect(X+10,Y-40,40,20);fill(#FF0015);triangle(X-0,Y+0,X-10,Y+10,X-10,Y+10);
     }
     else if(faceChoice == 1 ) //Erick O
     {
@@ -309,7 +324,7 @@ class Face
     }
     else if(faceChoice == 33) //Shayne C
     {
-      fill(150);rect(X-100+50, Y-100+60, 130, 100);rect(X-100+60, Y-100+160, 100, 10);rect(X-100+60, Y-100+180, 20, 10);rect(X-100+110, Y-100+180, 20, 10);fill(#FF4882);square(X-100+50,Y-100+140, 20);square(X-100+160, Y-100+130, 20);fill(#0052FF);rect(X-100+50, Y-100+30, 40, 50);rect(X-100+30, Y-100+40, 20, 40);rect(X-100+90, Y-100+40, 40, 40);rect(X-100+60, Y-100+80, 30, 10);square(X-100+90, Y-100+10, 10);rect(X-100+120, Y-100+20, 60, 40);fill(#2100FF);square(X-100+40, Y-100+80, 20);rect(X-100+50, Y-100+90, 80, 20);rect(X-100+90, Y-100+80, 50, 10);square(X-100+120, Y-100+70, 10);square(X-100+130, Y-100+60, 20);rect(X-100+120, Y-100+50, 20, 10);square(X-100+120, Y-100+40, 10);square(X-100+110, Y-100+30, 10);square(X-100+90, Y-100+20, 10);square(X-100+150, Y-100+50, 10);rect(X-100+160, Y-100+40, 30, 10);rect(X-100+180, Y-100+30, 10, 30);square(X-100+170, Y-100+20, 10);rect(X-100+30, Y-100+70, 10, 20);fill(60);rect(X-100+50, Y-100+170, 120, 10);rect(X-100+40, Y-100+110, 70, 10);rect(X-100+70, Y-100+120, 20, 10);rect(X-100+40, Y-100+100, 10, 60);rect(X-100+50, Y-100+160, 10, 30);rect(X-100+60, Y-100+190, 30, 10);rect(X-100+110, Y-100+190, 30, 10);rect(X-100+80, Y-100+180, 10, 10);rect(X-100+130, Y-100+180, 10, 20);rect(X-100+100, Y-100+180, 10, 10);rect(X-100+160, Y-100+160, 10, 10);rect(X-100+170, Y-100+150, 10, 10);rect(X-100+180, Y-100+100, 10, 50);rect(X-100+170, Y-100+50, 10, 50);rect(X-100+180, Y-100+60, 10, 10);rect(X-100+190, Y-100+30, 10, 30);rect(X-100+180, Y-100+20, 10, 10);rect(X-100+130, Y-100+10, 50, 10);rect(X-100+100,Y-100+ 20, 30, 10);rect(X-100+100, Y-100+10, 10, 30);rect(X-100+90,Y-100+ 0, 10, 10);rect(X-100+80, Y-100+10, 10, 20);rect(X-100+90, Y-100+30, 10, 10);rect(X-100+50, Y-100+20, 30, 10);rect(X-100+40, Y-100+30, 10, 10);rect(X-100+30, Y-100+40, 10, 20);rect(X-100+20, Y-100+60, 10, 30);rect(X-100+30, Y-100+90, 10, 10);rect(X-100+110, Y-100+100, 20, 10);rect(X-100+130, Y-100+90, 10, 10);rect(X-100+140, Y-100+80, 10, 10);rect(X-100+150, Y-100+60, 10, 20);rect(X-100+160, Y-100+50, 10, 10);rect(X-100+110, Y-100+40, 10, 10);rect(X-100+120, Y-100+120, 10, 10);rect(X-100+140, Y-100+110, 20, 20);fill(255);rect(X-100+140, Y-100+110, 10, 10);fill(60);rect(X-100+80, Y-100+140, 10, 10);rect(X-100+110, Y-100+140, 10, 10);rect(X-100+140, Y-100+140, 10, 10);rect(X-100+80, Y-100+150, 70, 10);
+      noStroke();fill(150);rect(X-100+50, Y-100+60, 130, 100);rect(X-100+60, Y-100+160, 100, 10);rect(X-100+60, Y-100+180, 20, 10);rect(X-100+110, Y-100+180, 20, 10);fill(#FF4882);square(X-100+50,Y-100+140, 20);square(X-100+160, Y-100+130, 20);fill(#0052FF);rect(X-100+50, Y-100+30, 40, 50);rect(X-100+30, Y-100+40, 20, 40);rect(X-100+90, Y-100+40, 40, 40);rect(X-100+60, Y-100+80, 30, 10);square(X-100+90, Y-100+10, 10);rect(X-100+120, Y-100+20, 60, 40);fill(#2100FF);square(X-100+40, Y-100+80, 20);rect(X-100+50, Y-100+90, 80, 20);rect(X-100+90, Y-100+80, 50, 10);square(X-100+120, Y-100+70, 10);square(X-100+130, Y-100+60, 20);rect(X-100+120, Y-100+50, 20, 10);square(X-100+120, Y-100+40, 10);square(X-100+110, Y-100+30, 10);square(X-100+90, Y-100+20, 10);square(X-100+150, Y-100+50, 10);rect(X-100+160, Y-100+40, 30, 10);rect(X-100+180, Y-100+30, 10, 30);square(X-100+170, Y-100+20, 10);rect(X-100+30, Y-100+70, 10, 20);fill(60);rect(X-100+50, Y-100+170, 120, 10);rect(X-100+40, Y-100+110, 70, 10);rect(X-100+70, Y-100+120, 20, 10);rect(X-100+40, Y-100+100, 10, 60);rect(X-100+50, Y-100+160, 10, 30);rect(X-100+60, Y-100+190, 30, 10);rect(X-100+110, Y-100+190, 30, 10);rect(X-100+80, Y-100+180, 10, 10);rect(X-100+130, Y-100+180, 10, 20);rect(X-100+100, Y-100+180, 10, 10);rect(X-100+160, Y-100+160, 10, 10);rect(X-100+170, Y-100+150, 10, 10);rect(X-100+180, Y-100+100, 10, 50);rect(X-100+170, Y-100+50, 10, 50);rect(X-100+180, Y-100+60, 10, 10);rect(X-100+190, Y-100+30, 10, 30);rect(X-100+180, Y-100+20, 10, 10);rect(X-100+130, Y-100+10, 50, 10);rect(X-100+100,Y-100+ 20, 30, 10);rect(X-100+100, Y-100+10, 10, 30);rect(X-100+90,Y-100+ 0, 10, 10);rect(X-100+80, Y-100+10, 10, 20);rect(X-100+90, Y-100+30, 10, 10);rect(X-100+50, Y-100+20, 30, 10);rect(X-100+40, Y-100+30, 10, 10);rect(X-100+30, Y-100+40, 10, 20);rect(X-100+20, Y-100+60, 10, 30);rect(X-100+30, Y-100+90, 10, 10);rect(X-100+110, Y-100+100, 20, 10);rect(X-100+130, Y-100+90, 10, 10);rect(X-100+140, Y-100+80, 10, 10);rect(X-100+150, Y-100+60, 10, 20);rect(X-100+160, Y-100+50, 10, 10);rect(X-100+110, Y-100+40, 10, 10);rect(X-100+120, Y-100+120, 10, 10);rect(X-100+140, Y-100+110, 20, 20);fill(255);rect(X-100+140, Y-100+110, 10, 10);fill(60);rect(X-100+80, Y-100+140, 10, 10);rect(X-100+110, Y-100+140, 10, 10);rect(X-100+140, Y-100+140, 10, 10);rect(X-100+80, Y-100+150, 70, 10);
     }
     else if(faceChoice == 34) //Zach M
     {
@@ -438,6 +453,110 @@ class Face
     else if(faceChoice == 65) //Cora F
     {
       stroke(0);fill(254, 213, 93);circle(X+5, Y+5, 190);fill(0);quad(X-95+6, Y-95+73, X-95+193, Y-95+74, X-95+197, Y-95+106, X-95+3, Y-95+105);fill(196, 202, 206);quad(X-95+32, Y-95+73, X-95+47, Y-95+73, X-95+47, Y-95+105, X-95+32, Y-95+105);fill(196, 202, 206);quad(X-95+152, Y-95+73, X-95+166, Y-95+73, X-95+166, Y-95+106, X-95+152, Y-95+106);fill(255);circle(X+5, Y+5, 90);fill(101, 67, 33);circle(X+5, Y+5, 45);fill(0);circle(X+5, Y+5, 22);noFill();curve(X-95+39, Y-95+67, X-95+39, Y-95+147, X-95+155, Y-95+147, X-95+155, Y-95+67);
+    }
+    else if(faceChoice == 66) //Jackson Burch
+    {
+      noStroke();fill(255);rect(X-40,Y-60,80,100);fill(245);rect(X-40,Y-60,80,20);fill(0);rect(X-40,Y-40,20,20);rect(X+20,Y-40,20,20);fill(255,255,0);rect(X-40,Y-20,80,20);fill(255,160,0);rect(X-40,Y,80,20);fill(255,0,0);rect(X-20,Y+20,40,40);
+    }
+    else if(faceChoice == 67) //David Sherrill
+    {
+      noStroke();fill(faceRed, faceGreen, faceBlue);rect(X-80, Y-80, 160, 160);fill(#F2D2BD);rect(X-60, Y-40, 120, 100);fill(0);rect(X-60, Y-20, 20, 20);rect(X+40, Y-20, 20, 20);fill(255);rect(X-40, Y-20, 20, 20);rect(X+20, Y-20, 20, 20);fill(#FFC0CB);rect(X-20, Y+40, 40, 20);fill(#AA336A);rect(X-20, Y+20, 40, 20);fill(faceRed, faceGreen, faceBlue);rect(X-61, Y+19, 22, 42);rect(X+39, Y+19, 22, 42);
+    }
+    else if(faceChoice == 68) //Reed Krablin
+    {
+      fill(0);circle(X+0,Y+0,300);fill(255);circle(X+0,Y+0,250);fill(0);strokeWeight(2);rect(X-65,Y-70,20,150);rect(X-75,Y-20,50,20);rect(X-95,Y-30,20,50);rect(X-5,Y+30,80,10);rect(X-5,Y+40,10,30);rect(X-5,Y+70,80,10);rect(X+65,Y+40,10,30);rect(X-35,Y+10,120,10);rect(X+45,Y-10,10,20);rect(X-15,Y-20,80,10);rect(X+5,Y-60,20,70);rect(X-15,Y-80,80,20);
+    }
+    else if(faceChoice == 69) //Keshawn Thornton
+    {
+      push();translate(X-85,Y-150);fill(50);beginShape();vertex(0, 220);  vertex(10, 215);vertex(30, 210);vertex(40, 160);vertex(40, 80);vertex(50, 30);  vertex(60, 75);  vertex(80, 70);  vertex(100, 70);  vertex(120, 75);  vertex(130, 30);  vertex(140, 80);  vertex(135, 160);  vertex(135, 200);  vertex(140, 210);  vertex(160, 220);  endShape(); fill(190, 170, 130);  beginShape();  vertex(50, 160);  vertex(73, 170);  vertex(82,173);  vertex(90, 170);  vertex(120, 160);  vertex(115, 200);  vertex(100, 210);  vertex(70, 210);  vertex(55, 200); vertex(50, 160); endShape();  fill(200, 200, 0);  arc(68, 128, 25, 20, PI*0.2, PI*1.1, CHORD);  arc(105, 128, 25, 20, PI*-0.1, PI*0.8, CHORD);  noFill();  curve(70, 203, 70, 183, 100, 185, 100, 205);  line(78, 190, 88, 191);  stroke(0);  line(78, 133, 69, 167);  line(94,133,97,165);  line(85,139,82,173);  pop();
+    }
+    else if(faceChoice == 70) //Sabra Morris
+    {
+      noStroke();fill(255);push();translate( X, Y);rotate( -millis() * TWO_PI / 2000 );ellipse( +0, +0,160,160);fill(0);arc( +0, +0,160,160, -HALF_PI, HALF_PI);arc(  +0,  -40, 80,80, PI*0.45, PI*1.55);fill(255);arc( +0, +40,80,80, -PI*0.45, PI*1.55);circle( +0, -40,20);fill(0);circle( +0, +40,20);pop();
+    }
+    else if(faceChoice == 71) //Bryce Coleman
+    {
+      fill(252,0,0); square(X-30,Y-20,60); fill(255,255,255); rect(X-10,Y+10,20,30); fill(95,74,14); triangle(X-30,Y-20, X+0,Y-70, X+30,Y-20); fill(255); square(X-10,Y-50,10); square(X-0,Y-50,10); square(X-10,Y-40,10); square(X-0,Y-40,10); fill(95,74,14); circle(X+7,Y+25,5);
+    }
+    else if(faceChoice == 72) //Michaela Kahrig
+    {
+      fill(0);noStroke();rect(X-65,   Y-75   ,131,101);  rect(X-55,   Y-85   ,111,11);  rect(X-45,   Y-95   ,91,11);  rect(X-35,   Y-105   ,71,11);  rect(X-55,   Y+25   ,111,21);  rect(X-45,   Y+45   ,91,11);  rect(X-35,   Y+55   ,71,31);  rect(X-25,   Y+85   ,51,11);  rect(X-15,   Y+95   ,31,11);   fill(255);  rect(X-55   , Y-45  ,111,51);  rect(X-45   , Y-65 ,91,21);  rect(X-25  ,  Y-75 ,51,11);  rect(X-45   ,Y+5   ,91,11);  rect(X-35   ,Y+15   ,71,21);  rect(X-25   ,Y+35   ,51,41);  rect(X-15   ,Y+75   ,31,11);  rect(X-5   ,Y+85   ,11,11);  fill(1);  rect( X-15  ,Y-45   ,11,31);  rect(X-25   ,Y-35   ,11,31);  rect(X-35   ,Y-25   ,11,21);  rect(X-45   ,Y-15   ,11,11);  rect(X+5   ,Y-45   ,11,31);  rect( X+15  , Y-35  ,11,31);  rect(X+25  ,Y-25   ,11,21);  rect( X+35  ,Y-15   ,11,11);  rect(X-5   , Y-5  ,11,11);  rect(X-15   ,Y+15   ,31,51);  rect(X-5   ,Y+65   ,11,11);
+    }
+    else if(faceChoice == 73) //Owen Keathley
+    {
+      noStroke();fill(25, 125, 0);  rect(X-80, Y-80, 160, 160);  fill(25, 75, 0);  rect(X-80, Y-80, 160, 20);  rect(X-80, Y-60, 80, 20);  rect(X+40, Y-60, 40, 20);  rect(X-80, Y-40, 20, 20);  rect(X-20, Y+20, 40, 20);  fill(0);  rect(X-60, Y, 40, 20);  rect(X+20, Y, 40, 20);
+    }
+    else if(faceChoice == 74) //Madelyn Scott
+    {
+      textAlign(CENTER); textSize(13); stroke(5);  fill(0, 200, 0);  ellipse(X-21, Y-15, 4, 13);  ellipse(X+21, Y-15, 4, 13);  fill(37, 134, 224);  rect(X-20, Y-30, 40, 30);  fill(37, 134, 224);  rect(X-10, Y+0, 20, 10);  fill(37, 134, 224);  rect(X-30, Y+10, 60, 70);  fill(250, 177, 32);  rect(X-40, Y+20, 10, 50);  rect(X+30, Y+20, 10, 50);  fill(250, 177, 32);  rect(X-20, Y+80, 10, 20);  rect(X+10, Y+80, 10, 20);  fill(124, 28, 255);  rect(X-20, Y+20, 40, 20);  fill(255, 233, 90);  rect(X-20, Y+50, 10, 10);  rect(X+0, Y+50, 10, 10);  fill(255, 69, 69);  rect(X-10, Y+50, 10, 10);  rect(X+10, Y+50, 10, 10);  fill(0, 200, 0);  circle(X-15, Y+100, 15);  circle(X+15, Y+100, 15);  fill(0);  circle(X-10, Y-20, 2);  circle(X+10, Y-20, 2);  rect(X-10, Y-10, 20, .9);  fill(0, 200, 0);  rect(X-12, Y-37, 3, 7);  rect(X+8, Y-37, 3, 7);  fill(0);  stroke(5);  text("BOBBY", X-0, Y+35);
+    }
+    else if(faceChoice == 75) //Angel Flowers
+    {
+      noStroke();fill(255);square(X-80,Y-80,10);  fill(#C15023);  rect(X-80, Y-70, 10, 140);  rect(X-70, Y-80, 140, 10);  fill(0);  rect(X+70, Y-80, 10, 150);  rect(X-80, Y+70, 160, 10);  fill(#F09F07);  square(X-70, Y-70, 140);  fill(0);  square(X-60, Y-60, 10);  square(X-60, Y+50, 10);  square(X+50, Y-60, 10);  square(X+50, Y+50, 10);  fill(0);  square(X+0, Y+40, 20);  square(X+0, Y+10, 20);  rect(X+10, Y-30, 30, 40);  rect(X-10, Y-40, 20, 10);  rect(X-30, Y-40, 20, 40);  fill(#C15023);  square(X-10, Y+30, 20);  square(X-10, Y+0, 20);  rect(X+0, Y-10, 30, 10);  rect(X+10, Y-40, 20, 30);  rect(X-30, Y-50, 50, 10);  rect(X-40, Y-40, 20, 30);
+    }
+    else if(faceChoice == 76) //Valenzia Lenz
+    {
+      noStroke();fill(#DE5AC8);rect(X-80,Y-80,160,180);fill(0);rect(X-80,Y-20,20,20);noStroke();fill(255);rect(X-60,Y-20,20,20);fill(0);rect(X+60,Y-20,20,20);noStroke();fill(255);rect(X+40,Y-20,20,20);fill(#F5B7EB);rect(X-40,Y+0,80,60);fill(#E066DA);rect(X-40,Y+20,80,20);fill(#B93692);rect(X-40,Y+20,20,20);rect(X+20,Y+20,20,20);fill(0);rect(X-78,Y-30,35,5);noStroke();fill(0);rect(X+44,Y-30,35,5);noStroke();
+    }
+    else if(faceChoice == 77) //Colton Amato
+    { 
+      noStroke();fill(30);rect(X-80,Y-80,160,160);  fill(0);  rect(X-80,Y-80,20,40);  rect(X+60,Y-80,20,40);  rect(X-40,Y-80,80,20);  rect(X-20,Y-60,40,20);  rect(X-60,Y-40,20,40);  square(X-80,Y-20,20);  rect(X+40,Y-40,20,40);  square(X+60,Y-20,20);  rect(X-60,Y+20,40,20);  rect(X+20,Y+20,40,20);  square(X-80,Y+40,20);  square(X+60,Y+40,20);  rect(X-60,Y+60,120,20);  fill(237,140,255);  square(X-80,Y+0,20);  square(X-40,Y+0,20);  square(X+20,Y+0,20);  square(X+60,Y+0,20);  fill(170,27,171);  square(X-60,Y+0,20);  square(X+40,Y+0,20);
+    }
+    else if(faceChoice ==78) //Mariana Lopez
+    {
+      noStroke();fill(255,0,1);rect(X-30,Y-55,70,91);rect(X-50,Y-45,20,71);rect(X-70,Y-45,20,61);rect(X+40,Y-45,40,71);rect(X+80,Y-35,10,51);fill(249,151,44);rect(X-30,Y-30,70,51);rect(X-50,Y-25,20,31);rect(X-40,Y+5,10,11);rect(X+40,Y-25,10,41);rect(X+50,Y-25,10,31);fill(255,255,1);rect(X-20,Y-25,50,31);rect(X -40,Y-15,20,21);rect(X+30,Y-15,10,21);rect(X+40,Y-15,10,11);fill(255);rect(X-10,Y-10,30,11);fill(1);rect(X-20,Y-10,10,21);rect(X+20,Y-10,10,21);fill(#199414);rect(X-10,Y+35,30,81);rect(X,Y+35,30,71);rect(X-50,Y+55,20,61); rect(X-30,Y+65,20,51);rect(X+10,Y+65,30,51);rect(X+40,Y+65,40,41);rect(X+60,Y+55,20,11);
+    }
+    else if(faceChoice == 79) //Shane Whitehurst
+    {
+      fill(#FFFFFF);  rect(X-105, Y-65, 210, 130);  fill(#FF0000);  rect(X-35,Y-65, 140, 10);  rect(X-35,Y-45, 140, 10);  rect(X-35,Y-25, 140, 10);  rect(X-105,Y-5, 210, 10);  rect(X-105,Y+15, 210, 10);  rect(X-105,Y+35, 210, 10);  rect(X-105,Y+55, 210, 10);  fill(#000EF7);  rect(X-105,Y-65, 84, 60);
+    }
+    else if(faceChoice == 80) //Zoey Rippeto
+    {
+      fill(#030303);  triangle(X-40, Y-40, X-30, Y-60, X-20, Y-40);  triangle(X+20, Y-40, X+30, Y-60, X+40, Y-40);  fill(#030303);  rect(X-40, Y-40, 80, 80);  fill(#C6DB2C);  rect(X-30, Y-30, 20, 20);  fill(0);  rect(X-25, Y-25, 10, 10);  fill(#C6DB2C);  rect(X+10, Y-30, 20, 20);  fill(0);  rect(X+15, Y-25, 10, 10);  fill(#FAC5C5);  rect(X-10, Y+0, 20, 15);  noFill();  stroke(#625959);  strokeWeight(2);  curve(X-30, Y-10, X-30, Y+20, X+30, Y+20, X+30, Y-10);
+    }
+    else if(faceChoice == 81) //Davion Sabbs
+    {
+      fill(0,200,0);square(X-50,Y-50,100);fill(0);rect(X-40,Y-40,20,10);rect(X+20,Y-40,20,10);rect(X-10,Y-20,20,10);fill(200,0,200);rect(X-40,Y+0,80,40);fill(255);rect(X-20,Y+0,20,30);rect(X+10,Y+0,20,30);
+    }
+    else if(faceChoice == 82) //Graham Stuart
+    {
+      fill(255,209,220);rect(X-25,Y-80,30,20);fill(125,125,125);rect(X-25,Y-60,30,10);fill(255,255,0);rect(X-25,Y-50,30,120);fill(166,138,109);triangle(X-25,Y+70,X+5,Y+70,X-10,Y+90);fill(0,0,0);triangle(X-14,Y+85,X-6,Y+85,X-10,Y+90);line(X-15,Y-50,X-15,Y+70);line(X-5,Y-50,X-5,Y+70);
+    }
+    else if(faceChoice == 83) //Imani Johnson
+    {
+      fill(200,0,200);square(X-50,Y-50,110);fill(0);rect(X-45,Y-30,30,10);rect(X+10,Y-30,30,10);fill(0);rect(X-45,Y+10,90,30);fill(0);rect(X-10,Y-10,20,10);fill(200,100,0);square(X-15,Y-80,30);fill(255);rect(X-40,Y+10,30,30);rect(X+5,Y+10,30,30);
+    }
+    else if(faceChoice == 84) //Kya Flowers
+    {
+      fill(255,0,0);  ellipse(X-40,Y-10, 50,50);  ellipse(X+30,Y-10, 50,50);  triangle(X-60,Y+10,X+0,Y+100,X+50,Y+10);  noStroke();  beginShape();  vertex(X-20,Y -20);  vertex(X-5, Y+0);  vertex(X+10,Y -25);  vertex(X+25,Y +25);  vertex(X-35,Y +25);  endShape();  strokeWeight(5);  stroke(255,0,0);  line(X-57,Y +8,X +47,Y +8);  fill(255);  noStroke();  push();  translate(X+30,Y+0);  rotate(2);  ellipse(0,0,20,5);  ellipse(25,0,15,10);  pop();
+    }
+    else if(faceChoice == 85) //Izabelle Ashley
+    {
+      fill(139,206,255);rect(X-50,Y-50,100,100);fill(#FFA0C4);circle(X-25,Y-10,20);circle(X+25,Y-10,20);fill(255);circle(X-20,Y-20,20);circle(X+20,Y-20,20);fill(0);circle(X-17,Y-17,5);circle(X+17,Y-17,5);fill(0);arc(X-0,Y+10,20,20,0,PI);fill(255);fill(0);quad(X-20,Y-37,X-12,Y-30,X-13,Y-28,X-21,Y-30);quad(X+12,Y-28,X+20,Y-35, X+22,Y-30,X+14,Y-26);
+    }
+    else if(faceChoice == 86) //Isabella Wallace
+    {
+      fill(#369FD6);  rect(X-70, Y-110, 140, 230);  fill(#FAF2F9);  rect(X-50, Y-80, 40, 40);  fill(#E359D1);  rect(X-40, Y-70, 15, 25);  fill(#FAF2F9);  rect(X+10,Y-80, 40, 40);  fill(#E359D1);  rect(X+23, Y-70, 15, 25);  fill(#16D671);  rect(X-10,Y-30, 20, 40);  fill(#E359D1);  rect(X-50,Y+50, 100, 30);  line(X-30, Y+50, X-30, Y+80);  line(X-10,Y+50, X-10, Y+80);  line(X+10, Y+50, X+10, Y+80);  line(X+30, Y+50, X+30, Y+80);
+    }
+    else if(faceChoice == 87) //Trey Parker
+    {
+      stroke(0); strokeWeight(1);fill(255,217,23);triangle(X-80,Y-30,X+80,Y-30,X+0,Y+150);fill(93,73,18);rect(X-80,Y-60,160,30);fill(229,0,0);ellipse(X+0,Y+90,50,20);fill(229,0,0);arc(X+50,Y+30,50,20, HALF_PI, PI*1.62, CHORD);fill(229,0,0);ellipse(X+0,Y-20,50,20);fill(229,0,0);arc(X-40,Y+30,50,20,PI*-0.74,PI*0.64, CHORD);fill(229,0,0);arc(X-25,Y+130,50,20,PI*-0.34,PI*0.24, CHORD );stroke(0,200,0);noFill();strokeWeight(3);curve(X-5,Y+0, X-35,Y-10, X-25,Y+10, X+5,Y+10);curve(X+5,Y+20 ,X-25,Y+10, X-15,Y+30, X+15,Y+10);curve(X+45,Y+40 ,X+15,Y+30, X+25,Y+50, X+50,Y+30);curve(X+55,Y+60 ,X+25,Y+50, X+35,Y+70, X+60,Y+50);
+    }
+    else if(faceChoice == 88) //Shayla Hibbs
+    {
+      fill(240, 180, 140);  rect(X-45, Y-55, 90, 10);  fill(220, 130, 20);  triangle(X-45,Y -45, X+45, Y-45,X +0, Y+95);  fill(230, 50, 10);  circle(X-25, Y-25, 20);  circle(X+5, Y-35, 20);  circle(X+25, Y-5, 20);  circle(X+5, Y+5, 20);  circle(X+10,Y +30, 20);  arc(X-5, Y+65, 20, 20, -PI*0.74, PI*0.52, CHORD);  arc(X-15,Y +30, 20, 20, -PI*0.77, PI*0.56, CHORD);  fill(0);  circle(X-20,Y +10, 10);  circle(X+10,Y -20, 10);  circle(X+20,Y +10, 10);  circle(X-10, Y+50, 10);  circle(X+10,Y +50, 10);  fill(110, 90, 90);  circle(X-20,Y +10, 5);  circle(X+10,Y -20, 5);  circle(X+20,Y +10, 5);  circle(X-10, Y+50, 5);  circle(X+10, Y+50, 5);
+    }
+    else if(faceChoice == 89) //Alexia Christman
+    {
+      fill(#FCFFAF);stroke(0);rect( X-100, Y-125,200,250);fill(#E0FFCB);noStroke();circle( X+10, Y-75,30);circle( X-30, Y+25,45);circle( X+80, Y+110,25);circle( X+75, Y+15,25);circle( X-60, Y-70,40);fill(#E9BFFF);noStroke();rect( X-100, Y+75,201,50);fill(#FAA9F2);rect( X-100, Y+105, 201,10);fill( (X-155)%255, (Y-130)%255,255);circle( X-60, Y-75,50);circle( X+50, Y-75,50);fill(0);circle( X-60, Y-75,30);circle( X+50, Y-75,30);fill((X/3)%255,(Y/3)%255,241);circle( X-60, Y-75,15);circle( X+50, Y-75,15);fill(0);textSize(30);textAlign(CENTER);text("Mrs.Sponge",  X-0, Y+0,30);
+    }
+    else if(faceChoice == 90) //Mylea Dozier
+    {
+      stroke(#FC87B2);  fill(#FAA2AF);  push();  translate(X-30,Y+35);  rotate(1);  ellipse(0,0,25,43);  pop();  ellipse(X+20,Y+35,25,43);  stroke(#EAD7B4);  fill(#F7EBD4);  circle(X-43,Y+45,20);  circle(X+25,Y+53,20);  fill(#F7EBD4);  stroke(#EAD7B4);  circle(X+62,Y-5,20);  circle(X+47,Y-5,25);  stroke(#FC87B2);  fill(#FAA2AF);  ellipse(X-40,Y-70,15,30);  noStroke();  fill(#F7EBD4);  ellipse(X-40,Y-70,6,16);  stroke(#FC87B2);  fill(#FAA2AF);  ellipse(X+0,Y+7,90,80);  ellipse(X-20,Y-40,60,60);  noStroke();  fill(#191B1C);  ellipse(X-44,Y-52,8,12);  stroke(#FC87B2);  fill(#FAA2AF);  ellipse(X+0,Y-70,15,30);  noStroke();  fill(#F7EBD4);  ellipse(X+0,Y-70,6,16);  noStroke();  fill(#F7EBD4);  ellipse(X-20,Y+18,45,45);  stroke(#EAD7B4);  ellipse(X-35,Y-30,48,42);  noStroke();  ellipse(X+20,Y-10,45,40);  ellipse(X+20,Y+10,17,30);  fill(#8FD9F5);  ellipse(X+20,Y-11,40,38);  ellipse(X+20,Y+10,13,25);  fill(#F7EBD4);  circle(X+20,Y+11,5);  circle(X+20,Y+18,5);  fill(#191B1C);  ellipse(X-12,Y-51,8,12);  fill(#FCE5EA);  circle(X-2,Y-35,15);  fill(#191B1C);  ellipse(X-34,Y-39,2,4);  ellipse(X-54,Y-39,2,4);  fill(#191B1C);  ellipse(X-8,Y-52,4,2);  stroke(#FC87B2);  fill(#FAA2AF);  push();  translate(X-5,Y+45);  rotate(.5);  ellipse(0,0,25,43);  pop();  push();  translate(X+35,Y+45);  rotate(-.7);  ellipse(0,0,25,43);  pop();  stroke(#FC87B2);  fill(#FCE5EA);  circle(X-26,Y-70,18);  circle(X-26,Y-80,15);  circle(X-26,Y-88,13);  circle(X-26,Y-95,10);  line(X-28,Y-62,X-28,Y-100);  stroke(#EAD7B4);  fill(#F7EBD4);  circle(X-10,Y+55,20);  circle(X+42,Y+55,20);
+    }
+    else if(faceChoice == 91) //Maka'lyn Cox
+    {
+      fill(#AF6E0B);circle(X+0, Y+0, 270);fill(45, 35, 15);noStroke();for (int i = 0; i < chipCount; i++){push();translate(X+0, Y+0);rotate(chipRotation[i]);circle(0, chipDist[i], 10);pop();}fill(0);circle(X-60, Y-40, 80);circle(X+60, Y-40, 80);fill(255);circle(X-45,Y-60, 30);circle(X+75, Y-60, 30);circle(X-65, Y-40, 15);circle(X+55, Y-40, 15);strokeWeight(2);fill(0);arc(X+0, Y+50,110, 80, 0, PI);strokeWeight(1);noFill();stroke(0);strokeWeight(2);arc(X-65, Y+50, 20, 20, -HALF_PI, HALF_PI);arc(X+65, Y+50, 20, 20, HALF_PI, HALF_PI*3);
     }
   }
 }
