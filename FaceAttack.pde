@@ -34,7 +34,7 @@ boolean redUp,blueUp;
 
 //For the enemy faces, which will grow more numerous as the game goes on
 int faceCount = 100; 
-int activeFaces = 21;
+int activeFaces = 1;
 int activeShot = 0;
 Face faces[] = new Face[faceCount];
 int enemyShotCounter = 0;
@@ -83,11 +83,13 @@ int treasureCount = maxTreasures;
 color [] treasCol = new color[treasureCount];
 float boomCount[] = new float [maxTreasures];
 PImage cookie;
+int cookieSpace;
 
 //Variables for student images
 int ballColor = 0; //For pokeball
 float size = 150; //For ghost nebula thing
 float scale = 0.3; //For snowman grenade
+PImage bee;
 
 void setup()
 {
@@ -125,13 +127,18 @@ void setup()
   
   doggo = new Boss();
   
+  cookieSpace = width/maxTreasures;
   cookie = loadImage("cookie.png");
-  cookie.resize(50,50);
+  cookie.resize(int(cookieSpace*0.8),0);
   imageMode(CENTER);
+  
+  bee = loadImage("bee.png");
 }
 
 void draw()
 {
+  rectMode(CORNER);
+  textAlign(LEFT);
   if(treasureCount <= 0) //End game
   {
     gameOver = true;
@@ -357,11 +364,11 @@ void drawTreasures()
   {
     if(i < treasureCount)
     {
-      translate(25+i*50,height);
+      translate((cookieSpace/2)+i*(cookieSpace),height);
       rotate(1.3*i);
       image(cookie,0,0);
       rotate(-1.3*i);
-      translate(-(25+i*50),-height);
+      translate(-((cookieSpace/2)+i*(cookieSpace)),-height);
     }
     else
       drawExplosion(i);
@@ -594,7 +601,7 @@ public void drawExplosion( int index )
   {
     noStroke();
     fill(255,100+boomCount[index],0,250-(2.5*boomCount[index]));
-    circle(25+index*50,height,boomCount[index]);
+    circle( (cookieSpace/2)+index*(cookieSpace),height,boomCount[index]);
     boomCount[index]++;
   }
 }
