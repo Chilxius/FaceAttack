@@ -89,7 +89,7 @@ int cookieSpace;
 int ballColor = 0; //For pokeball
 float size = 150; //For ghost nebula thing
 float scale = 0.3; //For snowman grenade
-PImage bee;
+PImage bee, panda, edame;
 
 void setup()
 {
@@ -133,6 +133,8 @@ void setup()
   imageMode(CENTER);
   
   bee = loadImage("bee.png");
+  panda = loadImage("panda.png");
+  edame = loadImage("edame.png"); edame.resize(200,0);
 }
 
 void draw()

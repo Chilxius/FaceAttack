@@ -28,6 +28,10 @@ class Face
   int papFace = (int)random(0,3);
   int sansFace = (int)random(0,3);
   
+  //For Haven's Bee
+  int nextMove = 0; 
+  int wingHeight = 0;
+  
   public Face( float x, float y )
   {
     X = x;
@@ -111,7 +115,7 @@ class Face
   
   public int changeFace()
   {
-    int choice = int(random(110));
+    int choice = int(random(100,116));
     switch(choice)
     {
       case 0: creator = "Ja'Shawn Gilbert"; break;
@@ -235,7 +239,12 @@ class Face
       case 108: creator = "Canon Dorsey"; break;
       case 109: creator = "Michael Rousseau"; break;
       
-
+      case 110: creator = "Austen Jonsek"; break;
+      case 111: creator = "Haven Herring"; break;
+      case 112: creator = "Benjamin Dong"; break;
+      case 113: creator = "Edame Egar"; break;
+      case 114: creator = "Shiloh Ladd"; break;
+      case 115: creator = "Jonathan Tucker"; break;
       
     }
     
@@ -249,6 +258,14 @@ class Face
   }
   
   public void drawFace()
+  {
+    if( faceChoice < 100 )
+      drawFaceA();
+    if( faceChoice < 200 )
+      drawFaceB();
+  }
+  
+  public void drawFaceA()
   {
     //noStroke();
     stroke(0);
@@ -657,6 +674,25 @@ class Face
     {
       fill(210, 180, 140);  triangle(X-60.0,Y-60.0, X+0,Y+60.0, X+40.0,Y-60.0);  fill(234, 2 , 6);  triangle(X-55,Y-60.0, X+0,Y+55, X+35,Y-60.0);  fill(251,219,101);  triangle(X-57,Y-60.0,X +0,Y+55, X+34,Y-60.0);  fill(215, 192, 163);  rect(X-61,Y-65, 105, 20.0, 10.0);  fill(170,55,17);  circle(X-30.0,Y-40.0, 10.0);  circle(X+10.0,Y-40.0, 10.0);  fill(139,75,6);  rect(X-10.0,Y-20.0, 5,10, 10.0);  arc(X-7.4,Y-15, 10.0,10.0, 0,PI);
     }
+    
+    //Credit
+    if( !destroyed && dist(mouseX,mouseY,X,Y) < 100 )
+    {
+      fill(255,100);
+      textSize(30);
+      textAlign(CENTER);
+      text(creator,X,Y+100);
+    }
+  }
+  
+  public void drawFaceB()
+  {
+    //noStroke();
+    stroke(0);
+    strokeWeight(1);
+    fill(255);
+    if(destroyed)
+      drawExplosion();
     else if(faceChoice == 100) //Cade Norton
     {
       fill(0);  rect(X-60,Y,30,5);  rect(X + 30, Y, 30,5);  fill(255);  circle(X,Y-50,50);  circle(X,Y,60);  circle(X,Y+60,70);  fill(0);  circle(X,Y,20);  circle(X,Y+45,20);  circle(X,Y+75,20);  circle(X-15,Y-50,6);  circle(X-8,Y-44,6);  circle(X,Y-40,6);  circle(X+8,Y-44,6);  circle(X+12,Y-50,6);  stroke(0);  fill(255);  circle(X-10,Y-60,10);  circle(X+10,Y-60,10);  fill(0);  circle(X-10,Y-60,3);  circle(X+10,Y-60,3);  fill(240,107,5);  triangle(X-2,Y-45 ,X-2,Y-55,X+40,Y-50);  fill(0);  ellipse(X-5,Y-76,2,5);  ellipse(X,Y-76,2,5);  ellipse(X+5,Y-76,2,5);
@@ -697,9 +733,35 @@ class Face
     {
       fill(0);circle(X+0, Y+0, 275);fill(255);circle(X-65,Y+50, 60);fill(0);circle(X-53,Y +35, 70);push();noStroke();translate(X+0,Y +0);fill(255);rotate(-HALF_PI);for (float i = 0; i < PI; i+= 0.03){rotate(0.03);circle(0, (i*550%137), 3);}pop();fill(255);arc(X+0,Y+0, 275, 275, PI, TWO_PI);fill(0);circle(X+60,Y-50, 60);fill(255);triangle(X+0, Y+0, X+50,Y+100, X+100,Y+0);triangle(X+120,Y+0,X+75, Y+90,X+40,Y+0 );triangle(X-20, Y+0,X+10,Y+60,X+50 ,Y+0);triangle(X+130,Y+0 ,X+110 ,Y+35,X+90,Y+0 );fill(0);triangle(X-42,Y-75,X-55,Y-10 ,X-30,Y-10);triangle(X-12,Y -60,X-20,Y-10,X -5, Y-10);triangle(X-70,Y -50,X-60,Y -10 ,X-80 ,Y-10);triangle(X+16,Y-50 ,X +8,Y-10 ,X+25 ,Y-10 );triangle(X-95,Y-35,X-90,Y-14,X-102 ,Y-5 );triangle(X-125,Y-5,X -110,Y-5, X-115, Y-30);rect(X+15, Y-10, 5, 10);rect(X-15,Y -10, 5, 10);rect(X-45,Y-10, 7, 10);rect(X-73,Y-10, 7, 10);rect(X-97, Y-10, 5, 10);rect(X-119, Y-10, 5, 10);
     }
+    else if(faceChoice == 110) //Austen Jonsek
+    {
+      noStroke();float anchorX = 0.0;anchorX = (X);float anchorY = 0.0;anchorY = (Y);fill(0,0,0);rect((anchorX-40), (anchorY-50), 80, 40);rect((anchorX-35), (anchorY-10), 70, 60);fill(0,0,0);rect((anchorX-30), (anchorY+50), 27.5, 40);rect((anchorX+2.5), (anchorY+50), 27.5, 40);rect((anchorX-27.5), (anchorY+90), 25, 10);rect((anchorX+2.5), (anchorY+90), 25, 10);fill(0,0,0);rect((anchorX-25.5), (anchorY+100), 23.5, 35);rect((anchorX+1.75), (anchorY+100), 23.5, 35);rect((anchorX-32.5), (anchorY+135), 30, 7.5);rect((anchorX+1.5), (anchorY+135), 30, 7.5);fill(0,0,0);triangle((anchorX-10), (anchorY-50), (anchorX-35), (anchorY-50), (anchorX-10), (anchorY-60));triangle((anchorX+10), (anchorY-50), (anchorX+35), (anchorY-50), (anchorX+10), (anchorY-60));rect((anchorX-10), (anchorY-67.5), 20, 17.5);rect((anchorX-15), (anchorY-105), 30, 40);fill(0,0,0);rect((anchorX-85), (anchorY-45), 45, 20);rect((anchorX+40), (anchorY-45), 45, 20);rect((anchorX-90), (anchorY-47.5), 5, 25);rect((anchorX+85), (anchorY-47.5), 5, 25);rect((anchorX-135), (anchorY-45), 45, 16.75);rect((anchorX+90), (anchorY-45), 45, 16.75);rect((anchorX-150), (anchorY-47.5), 15, 20);rect((anchorX+135), (anchorY-47.5), 15, 20);fill(255,255,255);circle((anchorX-5), (anchorY-95), 5);circle((anchorX+5), (anchorY-95), 5);arc((anchorX-1.75),(anchorY-85),25,15,0,PI);fill(0,0,0);arc((anchorX-1.75),(anchorY-85),22.5,12.5,-0.1,PI+0.1,CHORD);
+    }
+    else if(faceChoice == 111) //Haven Herring
+    {
+      float beeXPos = X;float beeYPos = Y;if(millis() >nextMove ){nextMove = millis() + 50;if (wingHeight == 0)wingHeight = 50;else if(wingHeight == 50)wingHeight =100; else wingHeight = 0;} fill(200, 150);ellipse(beeXPos-10, beeYPos-30, 40, wingHeight);fill(200, 255, 0);ellipse( beeXPos, beeYPos, 100, 50);fill(0);arc(beeXPos-10, beeYPos, 100, 50, HALF_PI, 3*PI/2);arc(beeXPos, beeYPos, 100, 50, -2*PI/4, HALF_PI);fill(200, 255, 0);arc(beeXPos-20, beeYPos, 100, 50, HALF_PI, (3*PI/2));arc(beeXPos+10, beeYPos, 100, 50,(-2*PI/4), HALF_PI);fill(0);circle(beeXPos-43, beeYPos, 10);rect(beeXPos-59, beeYPos+10, 20, 2);fill(200, 150);arc(beeXPos-10, beeYPos-30, 40, wingHeight,PI*0.9,TWO_PI*1.05);
+    }
+    else if(faceChoice == 112) //Benjamin Dong
+    {
+      //stroke(0);strokeWeight(1);fill(#222222);ellipse(X - 91+ 100, Y - 97 + 190, 90, 200);noStroke(); fill(255);ellipse(X - 91+ 100, Y - 97 + 170, 40, 50);fill(#222222);stroke(0);strokeWeight(1); ellipse(X - 91+ 65, Y - 97 + 175, 25, 30);fill(#FF6CCC);ellipse(X - 91+ 65, Y - 97 + 180, 10, 14);ellipse(X - 91+ 60, Y - 97 + 170, 5, 7);ellipse(X - 91+ 65, Y - 97 + 168, 5, 7);ellipse(X - 91+ 70, Y - 97 + 170, 5, 7);ellipse(X - 91+ 135, Y - 97 + 175, 25, 30);fill(#FF6CCC);ellipse(X - 91+ 135, Y - 97 + 180, 10, 14);ellipse(X - 91+ 130, Y - 97 + 170, 5, 7);ellipse(X - 91+ 135, Y - 97 + 168, 5, 7);ellipse(X - 91+ 140, Y - 97 + 170, 5, 7);noStroke(); fill(0, 0, 255);rect(X - 91+ 0, Y - 97 + 190, 500, 100);fill(#222222);circle(X - 91+ 58, Y - 97 + 60,35);circle(X - 91+ 138, Y - 97 + 60,35);fill(#FF6CCC);circle(X - 91+ 61, Y - 97 + 63,18);circle(X - 91+ 138, Y - 97 + 62,18);fill(255);rect(X - 91+ 50, Y - 97 + 50, 100, 85, 400);noStroke();fill(0);circle(X - 91+ 70, Y - 97 + 80, 25);circle(X - 91+ 70, Y - 97 + 85, 25);circle(X - 91+ 130, Y - 97 + 80, 25);circle(X - 91+ 130, Y - 97 + 85, 25);stroke(255);strokeWeight(2);circle(X - 91+ 70, Y - 97 + 82, 15);fill(255);circle(X - 91+ 72, Y - 97 + 80, 3);circle(X - 91+ 67, Y - 97 + 83, 1);fill(0);stroke(255);strokeWeight(2);circle(X - 91+ 130, Y - 97 + 82, 15);fill(255);circle(X - 91+ 132, Y - 97 + 80, 3);circle(X - 91+ 127, Y - 97 + 83, 1);fill(255);stroke(0);strokeWeight(1);circle(X - 91+ 109, Y - 97 + 110,15);circle(X - 91+ 93, Y - 97 + 110,15);noStroke();fill(255);circle(X - 91+ 90, Y - 97 + 108,15);circle(X - 91+ 110, Y - 97 + 108,15);fill(0);noStroke();rect(X - 91+ 91, Y - 97 + 97,18,8,200);triangle(X - 91+ 90, Y - 97 + 100, X - 91+ 100, Y - 97 + 110, X - 91+ 110, Y - 97 + 100);fill(#222222);quad(X - 91+ 158, Y - 97 + 114, X - 91+ 134, Y - 97 + 129, X - 91+ 139, Y - 97 + 149, X - 91+ 168, Y - 97 + 130);quad(X - 91+ 158, Y - 97 + 114, X - 91+ 139, Y - 97 + 149, X - 91+ 134, Y - 97 + 129, X - 91+ 168, Y - 97 + 130); fill(#222222);quad(X - 91+ 60, Y - 97 + 147, X - 91+ 37, Y - 97 + 131, X - 91+ 65, Y - 97 + 130, X - 91+ 43, Y - 97 + 118); quad(X - 91+ 60, Y - 97 + 147, X - 91+ 65, Y - 97 + 130, X - 91+ 37, Y - 97 + 131, X - 91+ 43, Y - 97 + 118);stroke(0);strokeWeight(1); fill(#222222);ellipse(X - 91+ 165, Y - 97 + 120,25,30);noStroke();fill(#FF6CCC);ellipse(X - 91+ 165, Y - 97 + 125,10,14);ellipse(X - 91+ 160, Y - 97 + 115,5,7);ellipse(X - 91+ 165, Y - 97 + 113,5,7);ellipse(X - 91+ 170, Y - 97 + 115,5,7);fill(#222222);stroke(0);strokeWeight(1);ellipse(X - 91+ 35, Y - 97 + 120,25,30);noStroke();fill(#FF6CCC);ellipse(X - 91+ 35, Y - 97 + 125,10,14);ellipse(X - 91+ 30, Y - 97 + 115,5,7);ellipse(X - 91+ 35, Y - 97 + 113,5,7);ellipse(X - 91+ 40, Y - 97 + 115,5,7);
+      image(panda,X,Y);
+    }
+    else if(faceChoice == 113) //Edame Egar
+    {
+      //noStroke();fill(#7E4444);circle(mouseX,mouseY,245);position = position +3;fill(#7E4444);rect(mouseX-90,mouseY+100,205,275);position2 = position2 +3;fill(#A5B7FF);circle(mouseX,mouseY,100);position3 = position3 +3;fill(#FF6F00);triangle( mouseX - 50,mouseY -65,mouseX + 65, mouseY - 75,mouseX - 175, mouseY + 45 ); position4 = position4 + 3;fill(245,160,88);triangle( mouseX - 188, mouseY-65, mouseX - 35, mouseY + 84, mouseX + 25, mouseY + 135 );position5 = position5 + 3;triangle( mouseX + 15, mouseY-95, mouseX - 95, mouseY - 135, mouseX - 295, mouseY + 20 );position6 = position6 + 3;ellipse(mouseX,mouseY+115,400,60);position7 = position7 + 3;fill(189,235,244);triangle( mouseX - 155, mouseY + 135, mouseX -5, mouseY + 365, mouseX + 180,mouseY + 135 );position8 = position8 + 3;fill(345,255,180);triangle( mouseX-205, mouseY+135, mouseX+70, mouseY+270, mouseX+85,mouseY+135 );position9 = position9 + 3;fill(345,255,180);triangle( mouseX+180, mouseY+135, mouseX+155, mouseY+270, mouseX+25,mouseY+135 );position10 = position10 + 3;fill(345,255,180);
+      image(edame,X,Y);
+    }
+    else if(faceChoice == 114) //Shiloh Ladd
+    {
+      fill(255);  triangle(X,Y+150, X -110, Y-50,X+110,Y-50);  fill(240,58,58);  triangle(X,Y+140,X-100,Y-45,X+100,Y-45);  fill(255);  triangle(X,Y+75,X-50,Y-15,X+50,Y-15);  circle(X,Y+110,5);  circle(X,Y-35,5);
+    }
+    else if(faceChoice == 115) //Jonathan Tucker
+    {
+      stroke(0);strokeWeight(2);fill(242, 110, 34);ellipse(X+10, Y+20, 85, 100);strokeWeight(2);quad(X-15, Y+60, X-5, Y+65, X-10, Y+80, X-20, Y+80);quad(X+10, Y+60, X+20, Y+65, X+15, Y+80, X+5, Y+80);quad(X-10, Y+80, X-20, Y+80, X-10, Y+95, X, Y+95);quad(X+15, Y+80, X+5, Y+80, X+15, Y+95, X+25, Y+95);quad(X-10, Y+85, X-15, Y+85, X-30, Y+95, X-10, Y+95);quad(X+15, Y+85, X+10, Y+85, X-5, Y+95, X+15, Y+95);stroke(242, 110, 34);strokeWeight(3);line(X-15, Y+60, X-5, Y+65);line(X+10, Y+60, X+20, Y+65);line(X-12, Y+80, X-18, Y+80);line(X+13, Y+80, X+7, Y+80);line(X-10, Y+85, X-15, Y+85);line(X+15, Y+85, X+10, Y+85);line(X-10, Y+85, X-10, Y+92);line(X+15, Y+85, X+15, Y+92);stroke(0);strokeWeight(1);circle(X-33, Y+93, 8);circle(X-8, Y+93, 8);circle(X-30, Y+93, 8);circle(X-5, Y+93, 8);circle(X-27, Y+93, 8);circle(X-2, Y+93, 8);noStroke();for( int i = 0; i < 20; i++ ){noStroke();fill(242, 110, 34);arc((X-18) - i, (Y+30) + i, 25 + (i * 0.5), 25 + (i * 0.5), 0, PI+QUARTER_PI, OPEN);noFill();stroke(0);strokeWeight(2);arc((X-18) - i, (Y+30) + i, 25 + (i * 0.5), 25 + (i * 0.5), PI, PI+QUARTER_PI);if( i == 19){arc((X-18) - i, (Y+30) + i, 25 + (i * 0.5), 25 + (i * 0.5), 0+QUARTER_PI-(QUARTER_PI/2), PI+QUARTER_PI);fill(0);arc((X-20) - i, (Y+35) + i, (25 + (i * 0.5)) / 2, (25 + (i * 0.5)) / 2, 0+QUARTER_PI+0.66, TWO_PI-QUARTER_PI+0.33);fill(184, 84, 26);noStroke();arc((X-20) - i,(Y+35) + i,((25 + (i * 0.5)) / 2) - 2,((25 + (i * 0.5)) / 2) - 2,QUARTER_PI+0.66, TWO_PI-QUARTER_PI+0.33,OPEN);stroke(0);strokeWeight(2);line( ((X-18) - i) + 15, ((Y+30) + i) + 5.5, ((X-18) - i) + 25, ((Y+30) + i) - 12);}}fill(255);stroke(0);strokeWeight(1);ellipse(X-10, Y+5, 20, 40);ellipse(X+10, Y+5, 20, 40);fill(0);ellipse(X-5, Y+3, 8, 16);ellipse(X+5, Y+10, 8, 16);fill(255);noStroke();circle(X-6, Y-1, 4);circle(X+6, Y+6, 4);stroke(0);strokeWeight(2);line(X-18, Y-10, X-8, Y-18); line(X+18, Y-10, X+8, Y-18);    
+    }
     
     //Credit
-    if( !destroyed && dist(X,Y,mouseX,mouseY) < 100 )
+    if( !destroyed && dist(mouseX,mouseY,X,Y) < 100 )
     {
       fill(255,100);
       textSize(30);
